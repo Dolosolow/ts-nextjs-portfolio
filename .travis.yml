@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dolosolow/web-portfolio -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dolosolow/web-portfolio yarn test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "react-port"
+  env: "Reactport-env"
+  bucket_name: "elasticbeanstalk-us-east-1-149237852033"
+  bucket_path: "react-port"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
