@@ -2,26 +2,28 @@ import React, { useState, useEffect } from "react";
 import { useSpring } from "react-spring";
 import { MainWrapper, ProgressBar, SectionDivider } from "./styled";
 
-import Header from "components/header";
-import Navbar from "components/navbar";
-import CardList from "components/cardList";
 import AboutSection from "components/aboutSection";
+import CardList from "components/cardList";
 import Footer from "components/footer";
+import Header from "components/header";
+import MaqrqueeGallery from "components/MarqueeGallery";
+import Navbar from "components/navbar";
 import ToTopButton from "components/toTopButton";
 
-const App: React.FC = () => {
+import { JRMProject } from "../../types/index";
+
+const App: React.FC<{ projects: JRMProject[] }> = ({ projects }) => {
   const [enableFocus, setEnableFocus] = useState(false);
+
   const animatedProgress = useSpring({
     value: 105,
-    from: { value: 0 },
     delay: 100,
+    from: { value: 0 },
     config: { duration: 600 },
   });
   const animatedProgressBar = {
     width: animatedProgress.value.to((value) => `${value}%`),
-    display: animatedProgress.value.to((value) =>
-      value === 105 ? "none" : "block"
-    ),
+    display: animatedProgress.value.to((value) => (value === 105 ? "none" : "block")),
   };
 
   useEffect(() => {
@@ -41,16 +43,11 @@ const App: React.FC = () => {
       <Navbar />
       <Header />
       <SectionDivider $name="projects" id="projects" />
-      <CardList
-        projects={[
-          { id: 1, name: "#fff" },
-          { id: 2, name: "#1db954" },
-          { id: 3, name: "#000" },
-          { id: 4, name: "#3937ff" },
-        ]}
-      />
-      <AboutSection />
+      <CardList projects={projects} />
+      <SectionDivider $name="skills" id="skills" />
+      <MaqrqueeGallery />
       <SectionDivider $name="about" id="about" />
+      <AboutSection />
       <Footer />
       <ToTopButton />
     </MainWrapper>

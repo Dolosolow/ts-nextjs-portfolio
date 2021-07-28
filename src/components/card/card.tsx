@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { SpringValue } from "react-spring";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
+import { faPaintRoller } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { StyledCard, StyledButton } from "./styled";
+import { JRMProject } from "../../types/index";
 
 interface Props {
-  background: string;
+  data: JRMProject;
   style: {
     opacity: any;
     y: SpringValue<number>;
   };
 }
 
-const Card: React.FC<Props> = ({ background, style: { opacity, y } }) => {
+const Card: React.FC<Props> = ({ data, style: { opacity, y } }) => {
+  const [index, setIndex] = useState(0);
+
+  const color = [data.color, data.subColor];
+
   return (
     <StyledCard
-      $background={background}
+      $background={color[index]}
       style={{
         opacity,
         transform: y.to((y) => `translate3d(0,${y}px,0)`),
@@ -23,35 +31,91 @@ const Card: React.FC<Props> = ({ background, style: { opacity, y } }) => {
     >
       <div className="card__content">
         <h2 className="card__title">
-          <span>Spotify</span>&nbsp;Mock Web App
+          <span>{data.name}</span>&nbsp;{data.subName}
         </h2>
-        <p className="card__desc">
-          In commodo velit metus duis interdum eu non. Nulla imperdiet
-          pellentesque bibendum amet nulla.
-        </p>
+        <p className="card__desc">{data.caption}</p>
         <div className="card__btns">
-          <StyledButton $background={background}>Details</StyledButton>
+          <StyledButton $background={color[index]}>Details</StyledButton>
           <StyledButton
-            $background={background}
+            $background={color[index]}
             $variant="outline"
             style={{ paddingRight: "20px" }}
           >
             <span>See the live</span>
-            <ExitToAppIcon
-              fontSize="large"
-              style={{ position: "absolute", marginLeft: "5px" }}
-            />
+            <ExitToAppIcon fontSize="large" style={{ position: "absolute", marginLeft: "5px" }} />
           </StyledButton>
+          <button
+            onClick={() => setIndex((prevState) => (prevState === 0 ? 1 : 0))}
+            style={{
+              alignSelf: "center",
+              background: "transparent",
+              borderRadius: "50%",
+              border: "1px solid #eee",
+              height: "40px",
+              width: "40px",
+            }}
+          >
+            <FontAwesomeIcon icon={faPaintRoller} style={{ color: "#eee" }} />
+          </button>
         </div>
       </div>
       <div className="card__img">
-        <img
-          src="https://images.creativemarket.com/0.1.0/ps/8725987/1820/1214/m1/fpnw/wm0/spotify-.jpg?1594828228&s=1b710ecda88c0e7d0415da75db4d6324"
-          alt={`project`}
-        />
+        <img src={data.imgUrl} alt={data.name} />
       </div>
     </StyledCard>
   );
 };
 
 export default Card;
+
+// import React, { useState } from "react";
+// import { SpringValue } from "react-spring";
+// import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+
+// import { StyledCard, StyledButton } from "./styled";
+// import { JRMProject } from "../../types/index";
+
+// interface Props {
+//   data: JRMProject;
+//   style: {
+//     opacity: any;
+//     y: SpringValue<number>;
+//   };
+// }
+
+// const Card: React.FC<Props> = ({ data, style: { opacity, y } }) => {
+//   const [color, setColor] = useState(data.color);
+
+//   return (
+//     <StyledCard
+//       $background={data.color}
+//       style={{
+//         opacity,
+//         transform: y.to((y) => `translate3d(0,${y}px,0)`),
+//       }}
+//     >
+//       <div className="card__content">
+//         <h2 className="card__title">
+//           <span>{data.name}</span>&nbsp;{data.subName}
+//         </h2>
+//         <p className="card__desc">{data.caption}</p>
+//         <div className="card__btns">
+//           <StyledButton $background={data.color}>Details</StyledButton>
+//           <StyledButton
+//             $background={data.color}
+//             $variant="outline"
+//             style={{ paddingRight: "20px" }}
+//           >
+//             <span>See the live</span>
+//             <ExitToAppIcon fontSize="large" style={{ position: "absolute", marginLeft: "5px" }} />
+//           </StyledButton>
+//         </div>
+//       </div>
+//       <div className="card__img">
+//         <img src={data.imgUrl} alt={data.name} />
+//       </div>
+//     </StyledCard>
+//   );
+// };
+
+// export default Card;

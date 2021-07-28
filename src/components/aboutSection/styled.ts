@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { StyledText, LayoutLimiter } from "styles/styled";
 
 export const LayoutAboutLimiter = styled(LayoutLimiter)`
-  margin: 10rem 0;
+  margin-bottom: 10rem;
 
   @media only screen and (max-width: ${750 / 16}em) {
-    margin: 6rem 0;
+    margin-bottom: 6rem;
   }
 `;
 
@@ -79,10 +79,10 @@ export const SocialLinkWrapper = styled.div`
     align-self: flex-start;
   }
 
-  p {
+  /* p {
     background-color: #42485c;
     border-radius: 8px;
     padding: 1rem 1.5rem;
     width: max-content;
-  }
+  } */
 `;

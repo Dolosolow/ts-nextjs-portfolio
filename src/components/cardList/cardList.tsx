@@ -3,9 +3,10 @@ import { SpringValue, useTrail } from "react-spring";
 import { StyledCLContainer, StyledCardList } from "./styled";
 
 import Card from "components/card";
+import { JRMProject } from "../../types/index";
 
 interface Props {
-  projects: Array<{ id: number; name: string }>;
+  projects: JRMProject[];
 }
 
 interface TrailProps {
@@ -21,11 +22,7 @@ const CardList: React.FC<Props> = ({ projects }) => {
     config: { duration: 700 },
   });
   const animatedCards = animatedTrails.map((props: TrailProps, idx: number) => (
-    <Card
-      key={projects[idx].name}
-      background={projects[idx].name}
-      style={props}
-    />
+    <Card key={projects[idx].id} data={projects[idx]} style={props} />
   ));
 
   return (

@@ -2,21 +2,23 @@ import styled, { css } from "styled-components";
 import { animated } from "react-spring";
 import { StyledProps } from "styles/styled";
 
-const getSectionDivider = (
-  position: string | undefined,
-  screen: number | null = null
-) => {
+const getSectionDivider = (position: string | undefined, screen: number | null = null) => {
   switch (position) {
     case "projects":
       if (screen !== null && screen <= 950) {
         return "64.3rem";
       }
       return "68.5rem";
+    case "skills":
+      if (screen !== null && screen <= 950) {
+        return "298rem";
+      }
+      return "242.3rem";
     case "about":
       if (screen !== null && screen <= 750) {
-        return "297rem";
+        return "350rem";
       }
-      return "245rem";
+      return "300rem";
     default:
       return 0;
   }

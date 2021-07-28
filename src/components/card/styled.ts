@@ -33,8 +33,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
     width: 100%;
     z-index: 10;
 
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-        mediaPx.tabPort / 16}em) {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
       padding: 10rem 5rem;
     }
 
@@ -51,8 +50,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
     font-size: 2.5rem;
     font-weight: 300;
 
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-        mediaPx.phone / 16}em) {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.phone / 16}em) {
       font-size: 2rem !important;
     }
 
@@ -68,8 +66,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
     padding: 2.5rem 0 3.5rem 0;
     max-width: 45rem;
 
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-        mediaPx.phone / 16}em) {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.phone / 16}em) {
       font-size: 1.3rem;
     }
   }
@@ -81,13 +78,13 @@ export const StyledCard = styled(animated.div)<StyledProps>`
 
   .card__img {
     display: inline-block;
+    height: 100%;
     position: absolute;
     right: 0;
     width: 60rem;
     z-index: 0;
 
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-        mediaPx.tabPort / 16}em) {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
       opacity: 0.8;
     }
 
@@ -97,8 +94,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
       width: 100%;
     }
 
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-        mediaPx.phone / 16}em) {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.phone / 16}em) {
       height: 25rem;
     }
 
@@ -112,7 +108,8 @@ export const StyledCard = styled(animated.div)<StyledProps>`
   .card__btns {
     display: flex;
     justify-content: space-between;
-    width: 30rem;
+    /* width: 30rem; */
+    width: 35rem;
 
     @media only screen and (max-width: ${750 / 16}em) {
       justify-content: space-evenly;
@@ -144,23 +141,17 @@ export const StyledButton = styled.button<StyledProps>`
       `;
     }
 
-    if (
-      color.luminosity().toFixed(2) <= 0.01 ||
-      color.luminosity().toFixed(2) >= 0.95
-    ) {
+    if (color.luminosity().toFixed(2) <= 0.01 || color.luminosity().toFixed(2) >= 0.95) {
       color = Color(colors.primary);
     }
 
     return css`
-      background-color: ${color.hex() === "#DD457C"
-        ? color.hex()
-        : color.lighten(0.3).hex()};
+      background-color: ${color.hex() === "#DD457C" ? color.hex() : color.lighten(0.3).hex()};
       color: ${color.isDark() ? colors.white : colors.black};
 
       &:hover {
         background-color: transparent;
-        border: 1px solid
-          ${Color($background).isDark() ? colors.white : color.hex()};
+        border: 1px solid ${Color($background).isDark() ? colors.white : color.hex()};
         color: ${Color($background).isDark() ? colors.white : color.hex()};
       }
     `;
