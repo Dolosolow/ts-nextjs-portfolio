@@ -1,3 +1,1 @@
-import MarqueeGallery from "./MarqueeGallery";
-
-export default MarqueeGallery;
+export { MarqueeGallery } from "./MarqueeGallery";

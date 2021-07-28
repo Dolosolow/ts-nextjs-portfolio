@@ -8,7 +8,7 @@ interface CBProps {
   text: string;
 }
 
-const CopyButton = ({ text }: CBProps) => {
+export const CopyButton = ({ text }: CBProps) => {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
@@ -38,5 +38,3 @@ const CopyButton = ({ text }: CBProps) => {
     </StyledButtonContainer>
   );
 };
-
-export default CopyButton;

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSpring } from "react-spring";
-import { MainWrapper, ProgressBar, SectionDivider } from "./styled";
 
-import AboutSection from "components/aboutSection";
-import CardList from "components/cardList";
-import Footer from "components/footer";
-import Header from "components/header";
-import MaqrqueeGallery from "components/MarqueeGallery";
-import Navbar from "components/navbar";
-import ToTopButton from "components/toTopButton";
+import { MainWrapper, ProgressBar, SectionDivider } from "./styled";
+import { AboutSection } from "components/aboutSection";
+import { CardList } from "components/cardList";
+import { Footer } from "components/footer";
+import { Header } from "components/header";
+import { MarqueeGallery } from "components/MarqueeGallery";
+import { Navbar } from "components/navbar";
+import { ToTopButton } from "components/toTopButton";
 
 import { JRMProject } from "../../types/index";
 
@@ -45,7 +45,7 @@ const App: React.FC<{ projects: JRMProject[] }> = ({ projects }) => {
       <SectionDivider $name="projects" id="projects" />
       <CardList projects={projects} />
       <SectionDivider $name="skills" id="skills" />
-      <MaqrqueeGallery />
+      <MarqueeGallery />
       <SectionDivider $name="about" id="about" />
       <AboutSection />
       <Footer />

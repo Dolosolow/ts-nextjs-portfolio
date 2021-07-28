@@ -1,3 +1,1 @@
-import ToTopButton from "./toTopButton";
-
-export default ToTopButton;
+export { ToTopButton } from "./toTopButton";

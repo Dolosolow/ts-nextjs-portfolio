@@ -1,10 +1,10 @@
-import React, { useState, useLayoutEffect } from "react";
-
-import { StyledButton } from "./styled";
+import { useState, useLayoutEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-const ToTopButton: React.FC = () => {
+import { StyledButton } from "./styled";
+
+export const ToTopButton = () => {
   const [show, setShow] = useState(false);
 
   useLayoutEffect(() => {
@@ -33,5 +33,3 @@ const ToTopButton: React.FC = () => {
     </StyledButton>
   );
 };
-
-export default ToTopButton;

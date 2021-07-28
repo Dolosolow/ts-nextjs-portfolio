@@ -37,15 +37,4 @@ export interface JRMProject {
   caption: string;
   description: string;
   stack: stack[];
-  subColor: string;
 }
-// export interface JRMProject {
-//   id: number;
-//   color: string;
-//   imgUrl: string;
-//   name: string;
-//   subName: string;
-//   caption: string;
-//   description: string;
-//   stack: stack[];
-// }

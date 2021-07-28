@@ -1,12 +1,9 @@
-import React from "react";
-
-import HeaderContent from "./headerContent";
-
+import { LayoutLimiter, StyledHeader, StyledTitle, AnimtedStyledText } from "./styled";
+import { HeaderContent } from "./headerContent";
 import BgVideo from "assets/vid/bg_vid.mp4";
 import BgImage from "assets/png/bg_img.png";
-import { LayoutLimiter, StyledHeader, StyledTitle, AnimtedStyledText } from "./styled";
 
-const Header: React.FC = () => {
+export const Header = () => {
   return (
     <StyledHeader>
       <video autoPlay loop muted>
@@ -33,5 +30,3 @@ const Header: React.FC = () => {
     </StyledHeader>
   );
 };
-
-export default Header;

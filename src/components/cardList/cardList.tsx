@@ -1,11 +1,10 @@
-import React from "react";
 import { SpringValue, useTrail } from "react-spring";
 import { StyledCLContainer, StyledCardList } from "./styled";
 
-import Card from "components/card";
+import { Card } from "components/card";
 import { JRMProject } from "../../types/index";
 
-interface Props {
+interface CLProps {
   projects: JRMProject[];
 }
 
@@ -14,7 +13,7 @@ interface TrailProps {
   y: SpringValue<number>;
 }
 
-const CardList: React.FC<Props> = ({ projects }) => {
+export const CardList = ({ projects }: CLProps) => {
   const animatedTrails = useTrail(projects.length, {
     from: { opacity: 0, y: 60 },
     to: { opacity: 1, y: 0 },
@@ -31,5 +30,3 @@ const CardList: React.FC<Props> = ({ projects }) => {
     </StyledCardList>
   );
 };
-
-export default CardList;

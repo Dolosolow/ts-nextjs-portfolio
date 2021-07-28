@@ -1,4 +1,3 @@
-import React from "react";
 import {
   LayoutAboutLimiter,
   StyledSection,
@@ -8,9 +7,9 @@ import {
 } from "./styled";
 import { faGithub, faCodepen, faFigma } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CopyButton from "components/CopyButton";
+import { CopyButton } from "components/CopyButton";
 
-const AboutContainer = () => {
+export const AboutSection = () => {
   return (
     <LayoutAboutLimiter $flexDirection="column" $width="70%">
       <StyledSection>
@@ -53,5 +52,3 @@ const AboutContainer = () => {
     </LayoutAboutLimiter>
   );
 };
-
-export default AboutContainer;

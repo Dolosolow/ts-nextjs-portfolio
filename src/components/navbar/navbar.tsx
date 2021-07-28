@@ -1,7 +1,8 @@
-import React, { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
+
 import { StyledNavContainer, StyledNavbar } from "./styled";
 
-const Navbar: React.FC = () => {
+export const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
   useLayoutEffect(() => {
@@ -35,5 +36,3 @@ const Navbar: React.FC = () => {
     </StyledNavbar>
   );
 };
-
-export default Navbar;

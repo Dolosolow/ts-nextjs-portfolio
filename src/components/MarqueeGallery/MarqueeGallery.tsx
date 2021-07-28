@@ -1,19 +1,19 @@
-import React from "react";
 import Marquee from "react-fast-marquee";
 
 import MarqueeImages from "./images";
 
-interface Props {
+interface MGProps {
   secondRow?: boolean;
 }
 
-const MarqueeGallery: React.FC<Props> = ({ secondRow = true }) => {
+export const MarqueeGallery = ({ secondRow = true }: MGProps) => {
   const firstSet = MarqueeImages.slice(MarqueeImages.length / 2);
   const secondSet = MarqueeImages.reverse().slice(MarqueeImages.length / 2);
 
   const renderRow = (images: string[], direction: "left" | "right") => {
     return (
       <Marquee
+        key={direction}
         direction={direction}
         gradient={false}
         style={{
@@ -25,7 +25,7 @@ const MarqueeGallery: React.FC<Props> = ({ secondRow = true }) => {
       >
         {images.map((image, index) => {
           return (
-            <picture key={index} style={{ marginRight: 40 }}>
+            <picture key={`${direction}${index}`} style={{ marginRight: 40 }}>
               <source media="(max-width: 949px)" srcSet={image} />
               <img src={image} alt="stack" width={100} />
             </picture>
@@ -51,5 +51,3 @@ const MarqueeGallery: React.FC<Props> = ({ secondRow = true }) => {
     </div>
   );
 };
-
-export default MarqueeGallery;

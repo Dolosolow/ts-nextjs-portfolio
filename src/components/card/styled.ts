@@ -62,7 +62,8 @@ export const StyledCard = styled(animated.div)<StyledProps>`
   }
 
   .card__desc {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 200;
     padding: 2.5rem 0 3.5rem 0;
     max-width: 45rem;
 
@@ -108,8 +109,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
   .card__btns {
     display: flex;
     justify-content: space-between;
-    /* width: 30rem; */
-    width: 35rem;
+    width: 30rem;
 
     @media only screen and (max-width: ${750 / 16}em) {
       justify-content: space-evenly;
