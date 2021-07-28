@@ -12,7 +12,11 @@ import { ToTopButton } from "components/toTopButton";
 
 import { JRMProject } from "../../types/index";
 
-const App: React.FC<{ projects: JRMProject[] }> = ({ projects }) => {
+interface Props {
+  projects: JRMProject[];
+}
+
+const App = ({ projects }: Props) => {
   const [enableFocus, setEnableFocus] = useState(false);
 
   const animatedProgress = useSpring({
