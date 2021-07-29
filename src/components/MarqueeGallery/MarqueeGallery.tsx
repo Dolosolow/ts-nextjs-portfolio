@@ -1,14 +1,20 @@
+import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { StyledMarqueeContainer } from "./styled";
 import MarqueeImages from "./images";
 
 interface MGProps {
   secondRow?: boolean;
 }
 
+const firstImgSet = MarqueeImages.slice(MarqueeImages.length / 2);
+const secondImgSet = MarqueeImages.reverse().slice(MarqueeImages.length / 2);
+
 export const MarqueeGallery = ({ secondRow = true }: MGProps) => {
-  const firstSet = MarqueeImages.slice(MarqueeImages.length / 2);
-  const secondSet = MarqueeImages.reverse().slice(MarqueeImages.length / 2);
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const { nodeVisible } = useIntersectionObserver(nodeRef);
 
   const renderRow = (images: string[], direction: "left" | "right") => {
     return (
@@ -37,17 +43,13 @@ export const MarqueeGallery = ({ secondRow = true }: MGProps) => {
 
   const renderContent = () => {
     return secondRow
-      ? [firstSet, secondSet].map((images, index) => {
+      ? [firstImgSet, secondImgSet].map((images, index) => {
           return renderRow(images, index === 1 ? "right" : "left");
         })
       : renderRow(MarqueeImages, "left");
   };
 
   return (
-    <div
-      style={{ width: "100%", padding: "20px 0", margin: "45px 0", backgroundColor: "#393b3d56" }}
-    >
-      {renderContent()}
-    </div>
+    <StyledMarqueeContainer ref={nodeRef}>{nodeVisible && renderContent()}</StyledMarqueeContainer>
   );
 };

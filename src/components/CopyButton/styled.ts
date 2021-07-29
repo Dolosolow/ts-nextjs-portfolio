@@ -32,4 +32,8 @@ export const StyledButtonContainer = styled.div<StyledProps>`
     transform: translateX(-100px);
     z-index: 0;
   }
+
+  span {
+    transition: all 0.3s ease-in-out;
+  }
 `;

@@ -21,7 +21,7 @@ export const Header = () => {
           <StyledTitle $light={true}>Jose Munoz</StyledTitle>
           <StyledTitle>I build things for the web</StyledTitle>
           <AnimtedStyledText $maxWidth="400" $margin="2.5rem 0">
-            I'm a software engineer based in Jersey City, NJ specializing in building and designing
+            I'm a web developer based in Jersey City, NJ specializing in building and designing
             high-quality websites and applications.
           </AnimtedStyledText>
         </HeaderContent>

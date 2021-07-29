@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSpring } from "react-spring";
 
 import { MainWrapper, ProgressBar, SectionDivider } from "./styled";

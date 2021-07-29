@@ -11,8 +11,7 @@ export const LayoutLimiter = styled(StyledContainer)<StyledProps>`
   height: 100%;
   justify-content: space-around;
 
-  @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-      mediaPx.tabPort / 16}em) {
+  @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
     flex-direction: column;
     justify-content: flex-end;
     width: 90%;
@@ -23,7 +22,7 @@ export const StyledHeader = styled.header<StyledProps>`
   background-color: ${({ theme: { colors } }) => colors.coolBlue};
   display: flex;
   justify-content: center;
-  height: 72rem;
+  height: 70rem;
   position: relative;
   width: 100%;
 
@@ -45,8 +44,7 @@ export const StyledHeader = styled.header<StyledProps>`
   }
 
   video {
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-        mediaPx.tabPort / 16}em) {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
       display: none;
     }
   }
@@ -102,11 +100,11 @@ export const StyledHeader = styled.header<StyledProps>`
 `;
 
 export const StyledTitle = styled(animated.p)<StyledProps>`
-  color: ${({ theme: { colors }, $light }) =>
-    $light ? colors.white : colors.smokedWhite};
+  color: ${({ theme: { colors }, $light }) => ($light ? colors.white : colors.smokedWhite)};
   font-size: 6rem;
   font-weight: 900;
   letter-spacing: -3px;
+  line-height: 1.2;
 
   ${({ theme: { mediaPx } }) => {
     return css`
@@ -129,8 +127,7 @@ export const StyledHeaderContent = styled(animated.div)`
   align-self: flex-end;
   margin-bottom: 5rem;
 
-  @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-      mediaPx.tabPort / 16}em) {
+  @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
     align-self: flex-start;
     margin-top: -1.5rem;
     margin-bottom: 3rem;

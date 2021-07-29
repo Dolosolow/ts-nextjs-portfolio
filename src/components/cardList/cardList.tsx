@@ -20,6 +20,7 @@ export const CardList = ({ projects }: CLProps) => {
     delay: 100,
     config: { duration: 700 },
   });
+
   const animatedCards = animatedTrails.map((props: TrailProps, idx: number) => (
     <Card key={projects[idx].id} data={projects[idx]} style={props} />
   ));

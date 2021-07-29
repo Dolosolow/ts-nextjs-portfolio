@@ -1,7 +1,8 @@
-import React from "react";
+import { useRef } from "react";
 import { SpringValue } from "react-spring";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { StyledCard, StyledButton } from "./styled";
 import { JRMProject } from "../../types/index";
 
@@ -14,8 +15,12 @@ interface CProps {
 }
 
 export const Card = ({ data, style: { opacity, y } }: CProps) => {
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const { nodeVisible } = useIntersectionObserver(nodeRef);
+
   return (
     <StyledCard
+      ref={nodeRef}
       $background={data.color}
       style={{
         opacity,
@@ -39,8 +44,8 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => {
           </StyledButton>
         </div>
       </div>
-      <div className="card__img">
-        <img src={data.imgUrl} alt={data.name} />
+      <div className="card__img" style={{ backgroundColor: data.color }}>
+        {nodeVisible && <img crossOrigin="anonymous" src={data.imgUrl} alt={data.name} />}
       </div>
     </StyledCard>
   );
