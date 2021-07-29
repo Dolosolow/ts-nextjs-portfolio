@@ -15,7 +15,7 @@ export const useIntersectionObserver = (
 ) => {
   const [state, setState] = useState({ visible: false, ratio: 0 });
   const observerOptions: ObserverOptions = Object.assign(
-    { rootMargin: "0", threshold: 0 },
+    { rootMargin: "0px", threshold: 0 },
     options
   );
 
