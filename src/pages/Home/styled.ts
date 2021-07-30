@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { animated } from "react-spring";
 import { StyledProps } from "styles/styled";
 
 const getSectionDivider = (position: string | undefined, screen: number | null = null) => {
@@ -37,17 +36,6 @@ export const MainWrapper = styled.div<StyledProps>`
   *:focus {
     outline: ${({ $enableFocus }) => ($enableFocus ? 1 : 0)};
   }
-`;
-
-export const ProgressBar = styled(animated.div)`
-  background-color: #fff;
-  height: 5px;
-  opacity: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  z-index: 300;
 `;
 
 export const SectionDivider = styled.span<StyledProps>`

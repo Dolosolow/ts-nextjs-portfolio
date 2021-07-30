@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useSpring } from "react-spring";
 
-import { MainWrapper, ProgressBar, SectionDivider } from "./styled";
+import { MainWrapper, SectionDivider } from "./styled";
 import { AboutSection } from "components/aboutSection";
 import { CardList } from "components/cardList";
 import { Footer } from "components/footer";
 import { Header } from "components/header";
 import { MarqueeGallery } from "components/MarqueeGallery";
 import { Navbar } from "components/navbar";
+import { TopProgressbar } from "components/TopProgressbar";
 import { ToTopButton } from "components/toTopButton";
 
 import { JRMProject } from "../../types/index";
@@ -16,19 +16,8 @@ interface Props {
   projects: JRMProject[];
 }
 
-const App = ({ projects }: Props) => {
+export const Home = ({ projects }: Props) => {
   const [enableFocus, setEnableFocus] = useState(false);
-
-  const animatedProgress = useSpring({
-    value: 105,
-    delay: 100,
-    from: { value: 0 },
-    config: { duration: 600 },
-  });
-  const animatedProgressBar = {
-    width: animatedProgress.value.to((value) => `${value}%`),
-    display: animatedProgress.value.to((value) => (value === 105 ? "none" : "block")),
-  };
 
   useEffect(() => {
     document.addEventListener("keydown", (evt) => {
@@ -43,7 +32,7 @@ const App = ({ projects }: Props) => {
   return (
     <MainWrapper $enableFocus={enableFocus}>
       <SectionDivider $name="top" id="top" />
-      <ProgressBar style={animatedProgressBar} />
+      <TopProgressbar />
       <Navbar />
       <Header />
       <SectionDivider $name="projects" id="projects" />
@@ -57,5 +46,3 @@ const App = ({ projects }: Props) => {
     </MainWrapper>
   );
 };
-
-export default App;
