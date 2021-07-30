@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { SpringValue } from "react-spring";
+import { NavLink } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
@@ -33,7 +34,9 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => {
         </h2>
         <p className="card__desc">{data.caption}</p>
         <div className="card__btns">
-          <StyledButton $background={data.color}>Details</StyledButton>
+          <NavLink to={`/project/${data.id}`}>
+            <StyledButton $background={data.color}>Details</StyledButton>
+          </NavLink>
           <StyledButton
             $background={data.color}
             $variant="outline"

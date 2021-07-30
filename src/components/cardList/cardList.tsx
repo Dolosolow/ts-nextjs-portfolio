@@ -1,7 +1,9 @@
-import { SpringValue, useTrail } from "react-spring";
-import { StyledCLContainer, StyledCardList } from "./styled";
+import { SpringValue } from "react-spring";
+
+import { useToggledTrails } from "../../hooks/useToggledTrail";
 
 import { Card } from "components/card";
+import { StyledCLContainer, StyledCardList } from "./styled";
 import { JRMProject } from "../../types/index";
 
 interface CLProps {
@@ -14,7 +16,7 @@ interface TrailProps {
 }
 
 export const CardList = ({ projects }: CLProps) => {
-  const animatedTrails = useTrail(projects.length, {
+  const animatedTrails = useToggledTrails(projects.length, {
     from: { opacity: 0, y: 60 },
     to: { opacity: 1, y: 0 },
     delay: 100,

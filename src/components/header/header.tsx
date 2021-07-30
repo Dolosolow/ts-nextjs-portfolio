@@ -25,7 +25,7 @@ export const Header = () => {
             high-quality websites and applications.
           </AnimtedStyledText>
         </HeaderContent>
-        <div className="path-shifter" />
+        <div className="path-shifter na" />
       </LayoutLimiter>
     </StyledHeader>
   );

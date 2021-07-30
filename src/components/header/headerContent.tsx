@@ -1,6 +1,8 @@
 import React from "react";
-import { SpringValue, useTrail } from "react-spring";
+import { SpringValue } from "react-spring";
+
 import { StyledHeaderContent } from "./styled";
+import { useToggledTrails } from "hooks/useToggledTrail";
 
 interface HCProps {
   children: React.ReactNode;
@@ -12,7 +14,7 @@ interface TrailsProps {
 }
 
 export const HeaderContent = ({ children }: HCProps) => {
-  const animatedTrails = useTrail(React.Children.count(children), {
+  const animatedTrails = useToggledTrails(React.Children.count(children), {
     from: { opacity: 0, y: 30 },
     to: { opacity: 1, y: 0 },
     delay: 2300,
