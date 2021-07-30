@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 import { StyledMarqueeContainer } from "./styled";
 import MarqueeImages from "./images";
 

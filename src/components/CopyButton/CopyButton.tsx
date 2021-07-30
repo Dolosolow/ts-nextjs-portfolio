@@ -2,7 +2,7 @@ import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { StyledButtonContainer, StyledCopyButton } from "./styled";
-import { useClipboard } from "../../hooks/useClipboard";
+import { useClipboard } from "hooks/useClipboard";
 
 interface CBProps {
   text: string;

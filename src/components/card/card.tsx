@@ -3,9 +3,9 @@ import { SpringValue } from "react-spring";
 import { NavLink } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 import { StyledCard, StyledButton } from "./styled";
-import { JRMProject } from "../../types/index";
+import { JRMProject } from "types/index";
 
 interface CProps {
   data: JRMProject;

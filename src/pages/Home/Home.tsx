@@ -10,7 +10,7 @@ import { Navbar } from "components/navbar";
 import { TopProgressbar } from "components/TopProgressbar";
 import { ToTopButton } from "components/toTopButton";
 
-import { JRMProject } from "../../types/index";
+import { JRMProject } from "types/index";
 
 interface Props {
   projects: JRMProject[];

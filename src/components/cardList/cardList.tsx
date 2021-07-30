@@ -1,10 +1,10 @@
 import { SpringValue } from "react-spring";
 
-import { useToggledTrails } from "../../hooks/useToggledTrail";
+import { useToggledTrails } from "hooks/useToggledTrail";
 
 import { Card } from "components/card";
 import { StyledCLContainer, StyledCardList } from "./styled";
-import { JRMProject } from "../../types/index";
+import { JRMProject } from "types/index";
 
 interface CLProps {
   projects: JRMProject[];
