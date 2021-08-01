@@ -2,7 +2,7 @@ import { JRMProject } from "../types/index";
 
 const projects: JRMProject[] = [
   {
-    id: 0,
+    id: "0",
     color: "#1DB954",
     name: "Spotify",
     subName: "Spotify Music Streaming Clone",
@@ -29,7 +29,7 @@ const projects: JRMProject[] = [
       "https://images.creativemarket.com/0.1.0/ps/8725987/1820/1214/m1/fpnw/wm0/spotify-.jpg?1594828228&s=1b710ecda88c0e7d0415da75db4d6324",
   },
   {
-    id: 1,
+    id: "1",
     color: "#eee",
     name: "FLIX",
     subName: "Movie Theater Website",
@@ -52,7 +52,7 @@ const projects: JRMProject[] = [
     imgUrl: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1627384335/images/FLIX_an2ob7.png",
   },
   {
-    id: 2,
+    id: "2",
     color: "#008080",
     name: "Fascio",
     subName: "Product Bundler",

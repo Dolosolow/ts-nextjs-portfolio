@@ -29,7 +29,7 @@ export type stack =
   | "Webpack";
 
 export interface JRMProject {
-  id: number;
+  id: string;
   color: string;
   imgUrl: string;
   name: string;
