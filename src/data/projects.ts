@@ -5,7 +5,7 @@ const projects: JRMProject[] = [
     id: "0",
     color: "#1DB954",
     name: "Spotify",
-    subName: "Spotify Music Streaming Clone",
+    subName: "Music Streaming Service",
     caption:
       "Cloned Music streaming service from the popular Swedish audio streaming and media service Spotify.",
     description:
@@ -25,8 +25,12 @@ const projects: JRMProject[] = [
       "Docker",
       "Digital Ocean",
     ],
-    imgUrl:
-      "https://images.creativemarket.com/0.1.0/ps/8725987/1820/1214/m1/fpnw/wm0/spotify-.jpg?1594828228&s=1b710ecda88c0e7d0415da75db4d6324",
+    images: {
+      thumbnail:
+        "https://images.creativemarket.com/0.1.0/ps/8725987/1820/1214/m1/fpnw/wm0/spotify-.jpg?1594828228&s=1b710ecda88c0e7d0415da75db4d6324",
+      detailed:
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1628018526/images/ex-img_uwifuw.png",
+    },
   },
   {
     id: "1",
@@ -49,13 +53,18 @@ const projects: JRMProject[] = [
       "Socket-io",
       "Webpack",
     ],
-    imgUrl: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1627384335/images/FLIX_an2ob7.png",
+    images: {
+      thumbnail:
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1627384335/images/FLIX_an2ob7.png",
+      detailed:
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1628018526/images/ex-img_uwifuw.png",
+    },
   },
   {
     id: "2",
     color: "#008080",
     name: "Fascio",
-    subName: "Product Bundler",
+    subName: "Ecommerce Product Bundler",
     caption:
       "Fascio, a BigCommerce app, is a product bundler which takes the products selected by the store owner and creates a bundle where a customer can select from the list.",
     description:
@@ -71,8 +80,12 @@ const projects: JRMProject[] = [
       "Figma",
       "Chakra-ui",
     ],
-    imgUrl:
-      "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1627442766/images/Fascio_fhg2rn.png",
+    images: {
+      thumbnail:
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1627442766/images/Fascio_fhg2rn.png",
+      detailed:
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1628018526/images/ex-img_uwifuw.png",
+    },
   },
 ];
 

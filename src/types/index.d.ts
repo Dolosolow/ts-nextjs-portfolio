@@ -31,10 +31,13 @@ export type stack =
 export interface JRMProject {
   id: string;
   color: string;
-  imgUrl: string;
   name: string;
   subName: string;
   caption: string;
   description: string;
   stack: stack[];
+  images: {
+    thumbnail: string;
+    detailed: string;
+  };
 }
