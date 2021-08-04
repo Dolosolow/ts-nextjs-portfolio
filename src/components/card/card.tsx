@@ -42,13 +42,13 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => {
             $variant="outline"
             style={{ paddingRight: "20px" }}
           >
-            <span>See the live</span>
+            <span>See live site</span>
             <ExitToAppIcon fontSize="large" style={{ position: "absolute", marginLeft: "5px" }} />
           </StyledButton>
         </div>
       </div>
       <div className="card__img" style={{ backgroundColor: data.color }}>
-        {nodeVisible && <img crossOrigin="anonymous" src={data.imgUrl} alt={data.name} />}
+        {nodeVisible && <img crossOrigin="anonymous" src={data.images.thumbnail} alt={data.name} />}
       </div>
     </StyledCard>
   );
