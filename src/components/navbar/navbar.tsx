@@ -1,11 +1,11 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { StyledNavContainer, StyledNavbar } from "./styled";
 
 export const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function updatePosition() {
       if (window.pageYOffset >= 50) {
         setExpanded(true);

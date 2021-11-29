@@ -1,13 +1,12 @@
 import styled, { css } from "styled-components";
-import { StyledContainer, StyledProps } from "styles/styled";
-import { slideInRight } from "styles/keyFrames";
-import jrLogo from "assets/svg/logo.svg";
+import { StyledContainer, StyledProps } from "@/styles/styled";
+import { slideInRight } from "@/styles/keyFrames";
 
 export const StyledNavContainer = styled(StyledContainer)`
   ${({ $expanded }) => {
     return css`
       ::before {
-        content: url(${jrLogo});
+        content: url("images/svg/logo.svg");
         opacity: ${!$expanded ? 0 : 1};
         position: absolute;
         top: ${$expanded ? "1rem" : "-5rem"};
@@ -24,8 +23,7 @@ export const StyledNavbar = styled.nav<StyledProps>`
   display: flex;
   justify-content: center;
   max-height: 0;
-  padding: ${({ $expanded }) =>
-    !$expanded ? "3rem 3rem 0rem 3rem" : "3rem 3rem 3rem 3rem"};
+  padding: ${({ $expanded }) => (!$expanded ? "3rem 3rem 0rem 3rem" : "3rem 3rem 3rem 3rem")};
   position: fixed;
   top: 0;
   left: 0;
@@ -54,11 +52,6 @@ export const StyledNavbar = styled.nav<StyledProps>`
     }
   }
 
-  @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-      mediaPx.phone / 16}em) {
-    visibility: hidden;
-  }
-
   ${({ $expanded, theme: { mediaPx } }) => {
     if ($expanded) {
       return css`
@@ -85,6 +78,8 @@ export const StyledNavbar = styled.nav<StyledProps>`
           }
         }
       `;
+    } else {
+      return null;
     }
   }}
 `;

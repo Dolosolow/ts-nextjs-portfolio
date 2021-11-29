@@ -1,32 +1,40 @@
-import { LayoutLimiter, StyledHeader, StyledTitle, AnimtedStyledText } from "./styled";
-import { HeaderContent } from "./headerContent";
-import BgVideo from "assets/vid/bg_vid.mp4";
-import BgImage from "assets/png/bg_img.png";
+import NextImage from "next/image";
 
-export const Header = () => {
-  return (
-    <StyledHeader>
+import { AnimatedWrapHeader } from "./AnimatedWrapHeader";
+import {
+  LayoutLimiter,
+  StyledHeader,
+  StyledTitle,
+  AnimtedStyledText,
+  MediaWrapper,
+} from "./styled";
+
+import lang from "src/lang/en.lang";
+
+export const Header = () => (
+  <StyledHeader>
+    <MediaWrapper>
       <video autoPlay loop muted>
-        <source media="(min-width: 950px)" src={BgVideo} type="video/mp4" />
+        <source media="(min-width: 950px)" src="/videos/bg_vid.mp4" type="video/mp4" />
       </video>
-      <picture>
-        <source media="(max-width: 949px)" srcSet={BgImage} />
-        <img src={BgImage} alt="smoked background" />
-      </picture>
-      <LayoutLimiter>
-        <HeaderContent>
-          <AnimtedStyledText $colored={true} $margin="0 0 0.5rem 0">
-            Hi, my name is
-          </AnimtedStyledText>
-          <StyledTitle $light={true}>Jose Munoz</StyledTitle>
-          <StyledTitle>I build things for the web</StyledTitle>
-          <AnimtedStyledText $maxWidth="400" $margin="2.5rem 0">
-            I'm a web developer based in Jersey City, NJ specializing in building and designing
-            high-quality websites and applications.
-          </AnimtedStyledText>
-        </HeaderContent>
-        <div className="path-shifter na" />
-      </LayoutLimiter>
-    </StyledHeader>
-  );
-};
+    </MediaWrapper>
+    <MediaWrapper>
+      <div>
+        <NextImage priority src="/images/png/bg_img.png" alt="smoked backed image" layout="fill" />
+      </div>
+    </MediaWrapper>
+    <LayoutLimiter>
+      <AnimatedWrapHeader>
+        <AnimtedStyledText $colored={true} $margin="0 0 0.5rem 0">
+          {lang.header.subText}
+        </AnimtedStyledText>
+        <StyledTitle $light={true}>{lang.header.title1}</StyledTitle>
+        <StyledTitle>{lang.header.title2}</StyledTitle>
+        <AnimtedStyledText $maxWidth="400" $margin="2.5rem 0">
+          {lang.header.context}
+        </AnimtedStyledText>
+      </AnimatedWrapHeader>
+      <div className="path-shifter na" />
+    </LayoutLimiter>
+  </StyledHeader>
+);

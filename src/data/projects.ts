@@ -1,4 +1,4 @@
-import { JRMProject } from "../types/index";
+import { JRMProject } from "@/types/index";
 
 const projects: JRMProject[] = [
   {
@@ -27,7 +27,7 @@ const projects: JRMProject[] = [
     ],
     images: {
       thumbnail:
-        "https://images.creativemarket.com/0.1.0/ps/8725987/1820/1214/m1/fpnw/wm0/spotify-.jpg?1594828228&s=1b710ecda88c0e7d0415da75db4d6324",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1636937136/images/spotify-clone_wdibyb.jpg",
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1628018526/images/ex-img_uwifuw.png",
     },

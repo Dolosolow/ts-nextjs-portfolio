@@ -9,16 +9,21 @@ interface ToggleSpringProps {
 }
 
 export const useToggledSprings = (props: ToggleSpringProps) => {
-  const showAnimation = window.localStorage.getItem("ela");
-  const springValues = showAnimation === null ? props : { ...props, from: { value: props.value } };
+  if (typeof window !== "undefined") {
+    const showAnimation = window.localStorage.getItem("ela");
+    const springValues =
+      showAnimation === null ? props : { ...props, from: { value: props.value } };
 
-  window.onbeforeunload = () => {
-    window.localStorage.removeItem("ela");
-  };
+    window.onbeforeunload = () => {
+      window.localStorage.removeItem("ela");
+    };
 
-  useLayoutEffect(() => {
-    if (!showAnimation) window.localStorage.setItem("ela", "true");
-  }, [showAnimation]);
+    useLayoutEffect(() => {
+      if (!showAnimation) window.localStorage.setItem("ela", "true");
+    }, [showAnimation]);
 
-  return useSpring(springValues);
+    return useSpring(springValues);
+  }
+
+  return useSpring(props);
 };

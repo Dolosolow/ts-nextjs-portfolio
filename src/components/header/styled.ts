@@ -1,12 +1,9 @@
 import styled, { css } from "styled-components";
 import { animated } from "react-spring";
 
-import { StyledContainer, StyledText, StyledProps } from "styles/styled";
-import { animateSvgPath } from "styles/keyFrames";
-import LogoSprite from "assets/svg/bg_sprite.svg";
-// ---------------------
-// HEADER
-// ---------------------
+import { StyledContainer, StyledText, StyledProps } from "@/styles/styled";
+import { animateSvgPath } from "@/styles/keyFrames";
+
 export const LayoutLimiter = styled(StyledContainer)<StyledProps>`
   height: 100%;
   justify-content: space-around;
@@ -15,6 +12,30 @@ export const LayoutLimiter = styled(StyledContainer)<StyledProps>`
     flex-direction: column;
     justify-content: flex-end;
     width: 90%;
+  }
+`;
+
+export const MediaWrapper = styled.div<StyledProps>`
+  img {
+    transform: scale(1.15);
+  }
+
+  video {
+    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
+      display: none;
+    }
+  }
+
+  video,
+  img {
+    height: 100%;
+    opacity: 0.1;
+    object-position: center;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 `;
 
@@ -39,35 +60,13 @@ export const StyledHeader = styled.header<StyledProps>`
     `;
   }}
 
-  img {
-    transform: scale(1.15);
-  }
-
-  video {
-    @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabPort / 16}em) {
-      display: none;
-    }
-  }
-
-  video,
-  img {
-    height: 100%;
-    opacity: 0.1;
-    object-position: center;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
   .path-shifter {
     animation-delay: 850ms;
     animation-duration: 1500ms;
     animation-fill-mode: forwards;
     animation-name: ${animateSvgPath};
     animation-timing-function: steps(138);
-    background-image: url(${LogoSprite});
+    background-image: url("images/svg/bg_sprite.svg");
     background-repeat: no-repeat;
     height: 287px;
     margin-bottom: 10rem;
