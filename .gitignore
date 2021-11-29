@@ -23,8 +23,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Local Netlify folder
+# Local third-party folder
 .netlify
+.next
 
 # Organizer text file
 todolist.txt
