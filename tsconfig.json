@@ -32,9 +32,10 @@
       "@/data/*": ["src/data/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/styles/*": ["src/styles/*"],
-      "@/types/*": ["src/types/*"]
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/styles/pages"],
   "exclude": ["node_modules"]
 }

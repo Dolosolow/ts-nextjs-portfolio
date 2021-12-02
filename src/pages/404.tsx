@@ -1,26 +1,21 @@
 import NextImage from "next/image";
 import Link from "next/link";
 
-import { StyledButton } from "@/components/styled-button";
-import {
-  MainWrapper,
-  BgImageText,
-  MessageWrapper,
-  BgImageWrapper,
-} from "@/styles/pages/styled-404";
+import { StyledButton } from "@/components/common/styled-button";
+import { PageNotFoundWrapper } from "@/styles/pages/styled-404";
 
 const Page404 = () => (
-  <MainWrapper>
-    <BgImageText>
+  <PageNotFoundWrapper>
+    <div className="pnf__bgtext">
       <p>OOPS</p>
-    </BgImageText>
-    <MessageWrapper>
+    </div>
+    <div className="pnf__message">
       <p>Sorry, the page your looking for can't not be found.</p>
-    </MessageWrapper>
+    </div>
     <Link href="/">
       <StyledButton style={{ zIndex: 100 }}>Go Home</StyledButton>
     </Link>
-    <BgImageWrapper>
+    <div className="pnf__imgwrapper">
       <NextImage
         priority
         src="/images/png/404page.png"
@@ -28,8 +23,8 @@ const Page404 = () => (
         objectFit="cover"
         layout="fill"
       />
-    </BgImageWrapper>
-  </MainWrapper>
+    </div>
+  </PageNotFoundWrapper>
 );
 
 export default Page404;

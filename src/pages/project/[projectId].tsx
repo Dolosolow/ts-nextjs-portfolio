@@ -1,51 +1,24 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import NextImage from "next/image";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import type { ReactElement } from "react";
+import type { GetStaticPaths, GetStaticProps } from "next";
 
-import { ImageWrapper, InfoCard, MainWrapper } from "@/styles/pages/styled-project";
-import { JRMProject } from "@/types/index";
+import { ProjectDocument } from "@/components/pages/project/project-interactive-docs";
+import { ProjectImgDocs } from "@/components/pages/project/project-img-docs";
+import Layout from "@/components/layout/Layout";
+
+import type { JRMProject } from "@/types/index";
 import Projects from "@/data/projects";
 
 const ProjectDetail = ({ project }: { project: JRMProject }) => {
-  return (
-    <MainWrapper>
-      {project && (
-        <>
-          <ImageWrapper>
-            <NextImage
-              priority
-              src={project.images.detailed.toString()}
-              alt="project layout"
-              height="7598"
-              width="1206"
-            />
-          </ImageWrapper>
-          <InfoCard>
-            <div>
-              <p>
-                {project?.name} {project?.subName}
-              </p>
-              <p style={{ opacity: "0.5", fontSize: "14px", marginTop: "5px" }}>Jose R Munoz</p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-              }}
-            >
-              <p>View live site</p>
-              <ExitToAppIcon fontSize="large" style={{ marginLeft: "8px", marginTop: "2px" }} />
-            </div>
-          </InfoCard>
-        </>
-      )}
-    </MainWrapper>
+  return project.isApi ? (
+    <ProjectDocument project={project} />
+  ) : (
+    <ProjectImgDocs project={project} />
   );
 };
 
-export default ProjectDetail;
+ProjectDetail.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
 
 export const getStaticPaths: GetStaticPaths = () => {
   const projects: JRMProject[] = Projects;
@@ -64,3 +37,5 @@ export const getStaticProps: GetStaticProps = (context) => {
 
   return { props: { project } };
 };
+
+export default ProjectDetail;

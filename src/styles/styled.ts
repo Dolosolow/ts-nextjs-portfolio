@@ -5,6 +5,7 @@ export interface StyledProps {
   readonly $colored?: string;
   readonly $enableFocus?: boolean;
   readonly $expanded?: boolean;
+  readonly $isRootRoute?: boolean;
   readonly $flexDirection?: string;
   readonly $focus?: boolean;
   readonly $light?: boolean;
@@ -36,8 +37,7 @@ export const LayoutLimiter = styled.div<StyledProps>`
       max-width: 120rem;
       width: ${$width ? $width : "100%"};
 
-      @media only screen and (max-width: ${({ theme: { mediaPx } }) =>
-          mediaPx.tabPort / 16}em) {
+      @media only screen and (max-width: ${({ theme: { mediaPx } }) => mediaPx.tabLand / 16}em) {
         flex-direction: column;
         justify-content: flex-end;
         width: 90%;
@@ -52,6 +52,10 @@ export const StyledText = styled.p<StyledProps>`
       color: ${$colored ? colors.primary : colors.smokedWhite};
       margin: ${$margin ? $margin : "0"};
       max-width: ${$maxWidth ? `${$maxWidth}px` : "none"};
+
+      @media only screen and (max-width: ${350 / 16}em) {
+        font-size: 1.3rem;
+      }
     `;
   }}
 `;

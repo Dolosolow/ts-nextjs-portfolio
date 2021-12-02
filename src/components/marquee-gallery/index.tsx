@@ -1,1 +1,0 @@
-export { MarqueeGallery } from "./MarqueeGallery";

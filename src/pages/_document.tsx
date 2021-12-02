@@ -1,7 +1,8 @@
-import Document, { Html, Main, NextScript, DocumentContext } from "next/document";
+import Document, { Html, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import type { DocumentContext } from "next/document";
 
-import { HeadDocument } from "@/components/head-document";
+import { HeadDocument } from "@/components/common/head-document";
 
 class HTMLDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

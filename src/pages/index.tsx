@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import { GetStaticProps } from "next";
+import type { ReactElement } from "react";
+import type { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 
-import { Header } from "@/components/header";
-import { Navbar } from "@/components/navbar";
-import { TopProgressbar } from "@/components/top-progress-bar";
-import { ToTopButton } from "@/components/to-top-button";
-import type { CLProps } from "@/components/card-list";
+import { MainWrapper } from "@/styles/pages/styled-home";
+import { Header } from "@/components/pages/root/header";
+import Layout from "@/components/layout/Layout";
+import type { CLProps } from "@/components/common/card-list";
+import type { MGProps } from "@/components/common/marquee-gallery";
 
-import { MainWrapper, SectionDivider } from "@/styles/pages/styled-home";
 import type { JRMProject } from "@/types/index";
+
 import projects from "@/data/projects";
 
 interface Props {
@@ -17,45 +18,48 @@ interface Props {
 }
 
 const DynamicCards = dynamic<CLProps>(() =>
-  import("../components/card-list").then((mod) => mod.CardList)
+  import("../components/common/card-list").then((mod) => mod.CardList)
 );
-const DynamicMarquee = dynamic<any>(() =>
-  import("../components/marquee-gallery").then((mod) => mod.MarqueeGallery)
+const DynamicMarquee = dynamic<MGProps>(() =>
+  import("../components/common/marquee-gallery").then((mod) => mod.MarqueeGallery)
 );
-const DynamicAboutSection = dynamic<any>(() =>
-  import("../components/about-section").then((mod) => mod.AboutSection)
+const DynamicAboutSection = dynamic<{ id: string }>(() =>
+  import("../components/pages/root/about-section").then((mod) => mod.AboutSection)
 );
-const DynamicFooter = dynamic<any>(() => import("../components/footer").then((mod) => mod.Footer));
 
 const Home = ({ projects }: Props) => {
   const [enableFocus, setEnableFocus] = useState(false);
 
   useEffect(() => {
-    document.addEventListener("keydown", () => {
+    const eventlistenerKD = () => {
       setEnableFocus(true);
-    });
+    };
 
-    document.addEventListener("mousedown", () => {
+    const eventlistenerMD = () => {
       setEnableFocus(false);
-    });
+    };
+
+    document.addEventListener("keydown", eventlistenerKD);
+    document.addEventListener("mousedown", eventlistenerMD);
+
+    return () => {
+      document.removeEventListener("keydown", eventlistenerKD);
+      document.removeEventListener("mousedown", eventlistenerMD);
+    };
   }, []);
 
   return (
     <MainWrapper $enableFocus={enableFocus}>
-      <SectionDivider $name="top" id="top" />
-      <TopProgressbar />
-      <Navbar />
       <Header />
-      <SectionDivider $name="projects" id="projects" />
-      <DynamicCards projects={projects} />
-      <SectionDivider $name="skills" id="skills" />
-      <DynamicMarquee />
-      <SectionDivider $name="about" id="about" />
-      <DynamicAboutSection />
-      <DynamicFooter />
-      <ToTopButton />
+      <DynamicCards id="projects" projects={projects} />
+      <DynamicMarquee id="stacks" />
+      <DynamicAboutSection id="about" />
     </MainWrapper>
   );
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
 };
 
 export default Home;

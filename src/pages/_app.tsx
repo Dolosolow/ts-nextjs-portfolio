@@ -1,15 +1,18 @@
-import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 
-import GlobalStyles, { Theme } from "@/styles/globalStyles";
-import { HtmlHead } from "@/components/head-document";
+import GlobalStyles, { Theme } from "@/styles/global-styles";
+import { HtmlHead } from "@/components/common/head-document";
 
-const AppEntry = ({ Component, pageProps }: AppProps) => {
+import type { AppPropsWithLayout } from "@/types/index";
+
+const AppEntry = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
       <HtmlHead />
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </ThemeProvider>
   );
 };

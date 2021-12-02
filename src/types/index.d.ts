@@ -1,7 +1,19 @@
+import type { ReactElement, ReactNode } from "react";
+import type { AppProps } from "next/app";
+import type { NextPage } from "next";
+
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+export type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
 export type stack =
   | "Css3"
   | "Cypress"
-  | "Digital Ocean"
+  | "DigitalOcean"
   | "Docker"
   | "Figma"
   | "Html5"
@@ -25,7 +37,7 @@ export type stack =
   | "Javascript"
   | "Typescript"
   | "Typeorm"
-  | "Socket-io"
+  | "Socketio"
   | "Webpack";
 
 export interface JRMProject {
@@ -36,7 +48,10 @@ export interface JRMProject {
   caption: string;
   description: string;
   stack: stack[];
+  isApi: boolean;
   images: {
+    height: string;
+    width: string;
     thumbnail: string;
     detailed: string;
   };
