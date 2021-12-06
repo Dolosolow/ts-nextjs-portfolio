@@ -69,7 +69,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
 
         &__btns {
           justify-content: space-between;
-          width: 30rem;
+          width: 34rem;
         }
       }
 

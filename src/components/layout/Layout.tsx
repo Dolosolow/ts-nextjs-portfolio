@@ -17,10 +17,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <DynamicNavbar isRootRoute={!query["api"]} />
+      <DynamicNavbar isRootRoute={!query["doc"]} />
       {children}
-      <DynamicToTopButton isRootRoute={!query["api"]} />
-      <DynamicFooter isRootRoute={!query["api"]} />
+      <DynamicToTopButton isRootRoute={!query["doc"]} />
+      <DynamicFooter isRootRoute={!query["doc"]} />
     </>
   );
 };

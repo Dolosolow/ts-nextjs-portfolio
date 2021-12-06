@@ -2,17 +2,23 @@ import React from "react";
 
 import { Codepen, Figma, Github } from "@/components/common/icons";
 import { CopyButton } from "@/components/common/copy-button";
+import { StyledButton } from "@/components/common/styled-button";
+import { ExternalLinkIcon } from "@/components/common/icons/ExternalLink";
 import { LayoutAboutLimiter, SocialLinkWrapper } from "./styled";
 import { StyledText } from "@/styles/styled";
 
-import { StyledButton } from "@/components/common/styled-button";
-import { ExternalLinkIcon } from "@/components/common/icons/ExternalLink";
+export interface ASProps {
+  id: string;
+  content: {
+    text: string;
+    email: string;
+    resumeUrl: string;
+  };
+}
 
-import lang from "src/lang/en.home-lang";
-
-export const AboutSection = ({ id }: { id: string }) => {
+export const AboutSection = (props: ASProps) => {
   const renderSectionText = () => {
-    const paras = lang.aboutSection.context.split("<br>");
+    const paras = props.content.text.split("<br>");
 
     return paras.map((text, idx) => (
       <React.Fragment key={idx}>
@@ -28,7 +34,7 @@ export const AboutSection = ({ id }: { id: string }) => {
   };
 
   return (
-    <LayoutAboutLimiter id={id} $flexDirection="column" $width="70%">
+    <LayoutAboutLimiter id={props.id} $flexDirection="column" $width="70%">
       <div className="section-content f-align">
         <h2 className="section-content__title">About me</h2>
         <StyledText className="section-content__aboutme-text">{renderSectionText()}</StyledText>
@@ -57,7 +63,7 @@ export const AboutSection = ({ id }: { id: string }) => {
               }}
             >
               <a
-                href={lang.aboutSection.resumeUrl}
+                href={props.content.resumeUrl}
                 target="_blank"
                 aria-label="view resume"
                 style={{ color: "inherit" }}
@@ -69,7 +75,7 @@ export const AboutSection = ({ id }: { id: string }) => {
                 style={{ position: "absolute", marginLeft: "8px", marginTop: "2px" }}
               />
             </StyledButton>
-            <CopyButton text={lang.aboutSection.email} />
+            <CopyButton text={props.content.email} />
           </div>
         </SocialLinkWrapper>
       </div>

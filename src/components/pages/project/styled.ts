@@ -20,47 +20,12 @@ export const StyledProjectImg = styled.div<StyledProps>`
             border-radius: 3rem;
           }
         }
-
-        &__cardinfo {
-          background-color: #49565c5f;
-          justify-content: space-between;
-          max-width: 83%;
-          width: 93%;
-          height: 12rem;
-          margin-top: 3rem;
-          border-radius: 2rem;
-          padding: 4rem;
-          color: white;
-
-          &-link {
-            margin-right: 3rem;
-
-            :hover {
-              text-decoration: underline;
-            }
-
-            span {
-              margin-right: 3px;
-            }
-
-            a {
-              cursor: pointer;
-              color: #fafafa;
-              white-space: nowrap;
-              width: max-content;
-            }
-          }
-        }
       }
 
       @media only screen and (max-width: ${mediaPx.tabPort / 16}em) {
         .projectlayout {
           &__imgwrapper {
             width: 90%;
-          }
-
-          &__cardinfo {
-            max-width: 93%;
           }
         }
       }

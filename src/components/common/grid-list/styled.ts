@@ -6,18 +6,17 @@ export const GridListWrapper = styled.div<StyledProps>`
   ${({ theme: { mediaPx } }) => {
     return css`
       flex-wrap: wrap;
-      justify-content: flex-start;
-      width: 90rem;
+      justify-content: center;
+      align-items: center;
+      max-width: 90rem;
+      width: 100vw;
 
       @media only screen and (max-width: ${mediaPx.tabPort / 16}em) {
-        padding-left: 4.5rem;
       }
 
       @media only screen and (max-width: ${750 / 16}em) {
         min-width: 61.9rem;
         width: 95%;
-        padding-left: 0px;
-        padding-right: 4.5rem;
       }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {

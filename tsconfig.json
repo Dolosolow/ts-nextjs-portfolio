@@ -31,6 +31,7 @@
       "@/components/*": ["src/components/*"],
       "@/data/*": ["src/data/*"],
       "@/hooks/*": ["src/hooks/*"],
+      "@/lang/*": ["src/lang/*"],
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/types/*"],
       "@/utils/*": ["src/utils/*"]

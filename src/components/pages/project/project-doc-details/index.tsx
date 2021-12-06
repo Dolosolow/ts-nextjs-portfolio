@@ -1,0 +1,1 @@
+export { ProjectDocDetails } from "./ProjectDocDetails";

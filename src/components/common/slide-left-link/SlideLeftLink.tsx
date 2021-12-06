@@ -29,15 +29,14 @@ export const SlideLeftLink = ({ href, icon, linkText }: SLLProps) => {
     >
       {React.cloneElement(icon, {
         style: {
-          transition: "all 0.35s ease-in-out",
-          transform: `${isHovered ? "translateX(0)" : "translateX(10px)"}`,
+          transform: "translateX(-30px)",
         },
       })}
       <p
         style={{
           marginLeft: "10px",
           transition: "all 0.35s ease-in-out",
-          transform: `${isHovered ? "translateX(0)" : "translateX(-60px)"}`,
+          transform: `${isHovered ? "translateX(0px)" : "translateX(-30px)"}`,
           opacity: `${isHovered ? 1 : 0}`,
         }}
       >

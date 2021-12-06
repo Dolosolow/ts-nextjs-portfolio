@@ -1,10 +1,9 @@
 import React from "react";
 import type { SpringValue } from "react-spring";
 
-import { AnimatedHeader } from "./styled";
-
 import { useToggledTrails } from "@/hooks/useToggledTrail";
 
+import { AnimatedHeader } from "./styled";
 interface HCProps {
   children: React.ReactNode;
 }

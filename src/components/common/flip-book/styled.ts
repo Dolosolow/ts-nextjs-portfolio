@@ -14,18 +14,26 @@ export const AnimatedList = styled.div<StyledProps>`
       position: relative;
 
       ul {
+        width: max-content;
+        text-align: left;
+      }
+
+      .animated__ul {
         animation-name: ${XlFlipBottomIn};
         animation-duration: 6s;
         animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1.2);
         animation-iteration-count: infinite;
-        width: max-content;
-        text-align: left;
+
+        li {
+          span {
+            margin-bottom: 1.5rem;
+          }
+        }
       }
 
       li {
         span {
           display: inline-block;
-          margin-bottom: 1.5rem;
           color: ${colors.primary};
         }
       }
@@ -33,7 +41,7 @@ export const AnimatedList = styled.div<StyledProps>`
       @media only screen and (max-width: ${mediaPx.tabLand / 16}em) {
         margin-bottom: -2rem;
 
-        ul {
+        .animated__ul {
           animation-name: ${LgFlipBottomIn};
         }
       }
@@ -41,7 +49,7 @@ export const AnimatedList = styled.div<StyledProps>`
       @media only screen and (max-width: ${mediaPx.tabPort / 16}em) {
         margin-bottom: -1.2rem;
 
-        ul {
+        .animated__ul {
           animation-name: ${XlFlipBottomIn};
         }
       }
@@ -49,7 +57,7 @@ export const AnimatedList = styled.div<StyledProps>`
       @media only screen and (max-width: ${750 / 16}em) {
         height: 7rem;
 
-        ul {
+        .animated__ul {
           animation-name: ${MdFlipBottomIn};
         }
       }
@@ -57,6 +65,10 @@ export const AnimatedList = styled.div<StyledProps>`
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
         ul {
           width: 100%;
+
+          li {
+            padding-top: 0.7rem;
+          }
         }
       }
     `;

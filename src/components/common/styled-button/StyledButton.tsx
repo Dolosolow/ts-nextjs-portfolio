@@ -5,7 +5,7 @@ import type { StyledProps } from "@/styles/styled";
 
 export const StyledButton = styled.button<StyledProps>`
   height: 4.5rem;
-  min-width: 14rem;
+  min-width: 16rem;
 
   :focus {
     outline: ${({ $focus }) => (!$focus ? "default" : "none")};

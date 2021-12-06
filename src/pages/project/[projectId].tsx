@@ -1,18 +1,18 @@
 import type { ReactElement } from "react";
 import type { GetStaticPaths, GetStaticProps } from "next";
 
-import { ProjectDocument } from "@/components/pages/project/project-interactive-docs";
-import { ProjectImgDocs } from "@/components/pages/project/project-img-docs";
 import Layout from "@/components/layout/Layout";
+import { ProjectDocDetails } from "@/components/pages/project/project-doc-details";
+import { ProjectImgDetails } from "@/components/pages/project/project-img-details";
 
-import type { JRMProject } from "@/types/index";
 import Projects from "@/data/projects";
+import type { JRMProject } from "@/types/index";
 
 const ProjectDetail = ({ project }: { project: JRMProject }) => {
-  return project.isApi ? (
-    <ProjectDocument project={project} />
+  return project.type === "web" ? (
+    <ProjectImgDetails project={project} />
   ) : (
-    <ProjectImgDocs project={project} />
+    <ProjectDocDetails project={project} />
   );
 };
 

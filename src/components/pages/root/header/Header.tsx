@@ -3,9 +3,16 @@ import NextImage from "next/image";
 import { AnimatedHeaderContainer } from "./AnimatedHeaderContainer";
 import { LayoutLimiter, StyledHeader, AnimatedStyledTitle, AnimtedStyledText } from "./styled";
 
-import lang from "src/lang/en.home-lang";
+interface HProps {
+  content: {
+    title_first: string;
+    title_second: string;
+    subText: string;
+    text: string;
+  };
+}
 
-export const Header = () => (
+export const Header = (props: HProps) => (
   <StyledHeader className="f">
     <div className="header-img">
       <div style={{ width: "100%", height: "100%", position: "relative" }}>
@@ -22,12 +29,12 @@ export const Header = () => (
     <LayoutLimiter>
       <AnimatedHeaderContainer>
         <AnimtedStyledText $colored={true} $margin="0 0 0.5rem 0">
-          {lang.header.subText}
+          {props.content.subText}
         </AnimtedStyledText>
-        <AnimatedStyledTitle $light={true}>{lang.header.title1}</AnimatedStyledTitle>
-        <AnimatedStyledTitle>{lang.header.title2}</AnimatedStyledTitle>
+        <AnimatedStyledTitle $light={true}>{props.content.title_first}</AnimatedStyledTitle>
+        <AnimatedStyledTitle>{props.content.title_second}</AnimatedStyledTitle>
         <AnimtedStyledText $maxWidth="400" $margin="2.5rem 0">
-          {lang.header.context}
+          {props.content.text}
         </AnimtedStyledText>
       </AnimatedHeaderContainer>
       <div className="path-shifter na" />

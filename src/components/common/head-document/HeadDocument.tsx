@@ -1,8 +1,10 @@
-import { Head } from "next/document";
 import NextHead from "next/head";
 import Script from "next/script";
+import { Head } from "next/document";
 
-import lang from "src/lang/en.html-meta";
+import lang from "@/lang/en.lang";
+
+const { title, description, domain, keywords } = lang.meta;
 
 export const HeadDocument = () => (
   <Head>
@@ -10,13 +12,13 @@ export const HeadDocument = () => (
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <meta name="theme-color" content="#000000" />
-    <meta name={lang.keywords.key} content={lang.keywords.content} />
-    <meta name={lang.description.key} content={lang.description.content} />
+    <meta name={keywords.key} content={keywords.content} />
+    <meta name={description.key} content={description.content} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={lang.title.content} />
-    <meta property="og:description" content={lang.description.content} />
-    <meta property="og:site_name" content={lang.domain} />
+    <meta property="og:title" content={title.content} />
+    <meta property="og:description" content={description.content} />
+    <meta property="og:site_name" content={domain} />
     <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
     <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
   </Head>
@@ -26,7 +28,7 @@ export const HtmlHead = () => (
   <>
     <NextHead>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{lang.title.content}</title>
+      <title>{title.content}</title>
     </NextHead>
     <Script
       dangerouslySetInnerHTML={{

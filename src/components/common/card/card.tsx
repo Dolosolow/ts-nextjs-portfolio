@@ -15,6 +15,19 @@ interface CProps {
   };
 }
 
+const generateUrlQuery = (data: JRMProject, type: "api" | "mobile" | "web") => {
+  const baseParams = "/project";
+
+  switch (type) {
+    case "api":
+      return `${baseParams}/${data.id}?doc=true`;
+    case "mobile":
+      return `${baseParams}/${data.id}?doc=true`;
+    default:
+      return `${baseParams}/${data.id}`;
+  }
+};
+
 export const Card = ({ data, style: { opacity, y } }: CProps) => (
   <StyledCard
     className="f"
@@ -30,7 +43,7 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
       </h2>
       <p className="card__desc">{data.caption}</p>
       <div className="card__btns f">
-        <Link href={`/project/${data.id}${data.isApi ? "?api=true" : ""}`}>
+        <Link href={generateUrlQuery(data, data.type)}>
           <StyledButton $background={data.color}>Details</StyledButton>
         </Link>
         <StyledButton $background={data.color} $variant="outline" style={{ paddingRight: "2rem" }}>

@@ -1,7 +1,8 @@
 import { CopyIcon } from "@/components/common/icons";
-import { StyledCopyButton } from "./styled";
 
 import { useClipboard } from "@/hooks/useClipboard";
+
+import { StyledCopyButton } from "./styled";
 
 export const CopyButton = ({ text }: { text: string }) => {
   const { copied, copyToClipboard } = useClipboard(text);

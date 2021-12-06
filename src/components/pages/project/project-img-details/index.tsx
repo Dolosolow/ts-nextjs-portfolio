@@ -1,0 +1,1 @@
+export { ProjectImgDetails } from "./ProjectImgDetails";

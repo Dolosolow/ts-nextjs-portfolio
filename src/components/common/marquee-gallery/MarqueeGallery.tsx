@@ -1,6 +1,6 @@
-import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import NextImage from "next/image";
+import { useRef } from "react";
 
 import { StyledMarqueeContainer } from "./styled";
 
@@ -46,5 +46,9 @@ export const MarqueeGallery = ({ id, secondRow = true }: MGProps) => {
       : renderRow(images, "left");
   };
 
-  return <StyledMarqueeContainer id={id} ref={nodeRef}>{renderContent()}</StyledMarqueeContainer>;
+  return (
+    <StyledMarqueeContainer id={id} ref={nodeRef}>
+      {renderContent()}
+    </StyledMarqueeContainer>
+  );
 };

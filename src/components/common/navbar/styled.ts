@@ -13,6 +13,7 @@ export const StyledNavContainer = styled(StyledContainer)`
         top: ${$expanded ? ($isRootRoute ? "1rem" : "-0.25rem") : "-5rem"};
         left: 0;
         transition: all 0.3s ease-in-out;
+        display: ${$isRootRoute ? "block" : "none"};
       }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
@@ -41,6 +42,7 @@ export const StyledNavbar = styled.nav<StyledProps>`
       ul {
         display: flex;
         padding: 1.8rem;
+        height: 100%;
         width: max-content;
 
         li {
@@ -57,12 +59,6 @@ export const StyledNavbar = styled.nav<StyledProps>`
             }
           }
         }
-      }
-
-      .back-btn {
-        color: #fafafa;
-        cursor: pointer;
-        margin-left: auto;
       }
 
       ${$expanded &&
@@ -83,6 +79,12 @@ export const StyledNavbar = styled.nav<StyledProps>`
           }
         }
       `}
+
+      @media only screen and (max-width: ${1300 / 16}em) {
+        .back-btn {
+          transform: scale(0.9) !important;
+        }
+      }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
         padding: ${!$expanded ? "3rem 2rem 0rem 2rem" : "3rem 2rem 3rem 2rem"};
@@ -105,10 +107,6 @@ export const StyledNavbar = styled.nav<StyledProps>`
               }
             }
           }
-        }
-
-        .back-btn {
-          transform: scale(0.9) !important;
         }
       }
     `;
