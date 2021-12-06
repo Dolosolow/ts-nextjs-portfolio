@@ -104,6 +104,7 @@ export interface JRMProject {
   images: {
     height: string;
     width: string;
+    blur?: string;
     thumbnail: string;
     detailed: string;
     videoSrc: string | null;

@@ -27,6 +27,7 @@ const projects: JRMProject[] = [
     images: {
       height: "11397",
       width: "1810",
+      blur: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647742066/images/hhs-layout-blur_y1kau6.png",
       thumbnail:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715625/images/Fascio_hwzdcr.png",
       detailed:
@@ -51,6 +52,7 @@ const projects: JRMProject[] = [
     images: {
       height: "14499",
       width: "1810",
+      blur: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647742066/images/hhs-layout-blur_y1kau6.png",
       thumbnail:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715624/images/Harbor_Home_qnz7ju.png",
       detailed:
@@ -86,6 +88,7 @@ const projects: JRMProject[] = [
     images: {
       height: "",
       width: "",
+      blur: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647742066/images/hhs-layout-blur_y1kau6.png",
       thumbnail:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715624/images/FLIX_zabc63.png",
       detailed:

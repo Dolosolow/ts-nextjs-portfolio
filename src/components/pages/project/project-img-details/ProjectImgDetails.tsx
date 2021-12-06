@@ -16,7 +16,7 @@ export const ProjectImgDetails = ({ project }: { project: JRMProject }) => (
             alt="project layout"
             src={project.images.detailed.toString()}
             placeholder="blur"
-            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPsrQcAAZ8BDlpDGcMAAAAASUVORK5CYII="
+            blurDataURL={project.images.blur}
             height={project.images.height}
             width={project.images.width}
             objectFit="contain"

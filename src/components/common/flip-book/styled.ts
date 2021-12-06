@@ -1,12 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { StyledProps } from "@/styles/styled";
-import {
-  XlFlipBottomIn,
-  LgFlipBottomIn,
-  MdFlipBottomIn,
-  SmFlipBottomIn,
-} from "@/styles/key-frames";
+import { XlFlipBottomIn, LgFlipBottomIn, SmFlipBottomIn } from "@/styles/key-frames";
 
 export const AnimatedList = styled.div<StyledProps>`
   ${({ theme: { mediaPx, colors } }) => {
@@ -73,10 +68,6 @@ export const AnimatedList = styled.div<StyledProps>`
 
           li {
             padding-top: 0.7rem;
-          }
-
-          .animated__ul {
-            animation-name: ${SmFlipBottomIn};
           }
         }
       }
