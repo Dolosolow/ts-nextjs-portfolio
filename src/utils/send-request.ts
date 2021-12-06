@@ -16,9 +16,10 @@ export const sendRequest = async (
         cb(true, null);
         let response;
 
-        response = await fetchResponse(
-          GQLOperations.LoginMutation(requestBody["email"], requestBody["password"])
-        );
+        response = await fetchResponse(GQLOperations.LoginMutation(), {
+          email: requestBody["email"],
+          password: requestBody["password"],
+        });
 
         if (!response.data.login) {
           response = await fetchResponse(GQLOperations.UserQuery());
@@ -31,7 +32,10 @@ export const sendRequest = async (
       if (requestBody["email"].length > 0) {
         cb(true, null);
 
-        const response = await fetchResponse(GQLOperations.RegisterMutation(requestBody["email"]));
+        const response = await fetchResponse(GQLOperations.RegisterMutation(), {
+          email: requestBody["email"],
+          password: requestBody["email"],
+        });
 
         cb(false, response);
       }
@@ -40,9 +44,9 @@ export const sendRequest = async (
       if (requestBody["email"].length > 0) {
         cb(true, null);
 
-        const response = await fetchResponse(
-          GQLOperations.ForgotPasswordMutation(requestBody["email"])
-        );
+        const response = await fetchResponse(GQLOperations.ForgotPasswordMutation(), {
+          email: requestBody["email"],
+        });
 
         cb(false, response);
       }
@@ -51,9 +55,10 @@ export const sendRequest = async (
       if (requestBody["new_password"].length > 0 && requestBody["key"].length > 0) {
         cb(true, null);
 
-        const response = await fetchResponse(
-          GQLOperations.ChangePasswordMutation(requestBody["new_password"], requestBody["key"])
-        );
+        const response = await fetchResponse(GQLOperations.ChangePasswordMutation(), {
+          newPassword: requestBody["new_password"],
+          key: requestBody["key"],
+        });
 
         cb(false, response);
       }

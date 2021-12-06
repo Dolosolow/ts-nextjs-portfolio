@@ -10,8 +10,8 @@ const content: ProjectDocument = {
         title: "Getting Started",
         caption: "Test on your device via install or use the Expo go app",
         description: `A clone of Spotify build with React Native and Expo. Motivation behind it was the UI the Spotify team build. 
-        The background video that veered away from traditional music players album covers. Approach at first was to recreate the music player. Utilizing tools like React Native Reanimated made recreating the UI easier to achieve.
-        For music, Downloaded mp3 files. As for the background videos, went with Apple's quicktime player to record pre-cut sized music video from youtube.`,
+         The background video that veered away from traditional music players album covers. Approach at first was to recreate the music player. Utilizing tools like React Native Reanimated made recreating the UI easier to achieve.
+         For music, Downloaded mp3 files. As for the background videos, went with Apple's quicktime player to record pre-cut sized music video from youtube.`,
         body: [],
       },
       {
@@ -30,8 +30,8 @@ const content: ProjectDocument = {
         title: "Getting Ahead",
         caption: "Test on your device via install or use the Expo go app",
         description: `Register and authenticate users with the power of Graphql and Rest. With Redis and express-sessions keep users signed in.
-        Connected to an emailing delivery system to send confirmation emails and reset password emails. Simple to add other email services to meet
-        project needs such as email receipts or promotions.`,
+         Connected to an emailing delivery system to send confirmation emails and reset password emails. Simple to add other email services to meet
+         project needs such as email receipts or promotions.`,
         body: [],
       },
       {
@@ -49,8 +49,8 @@ const content: ProjectDocument = {
               text: "To keep things simple suggest use this neat",
               link_text: "10 min email generator",
               description: `10minemail does what the name implies and helps test receiving mail from an API
-              without using your actual email address. The given email is open for 10 minutes, great
-              for this use case.`,
+               without using your actual email address. The given email is open for 10 minutes, great
+               for this use case.`,
             },
           },
           {
@@ -79,8 +79,8 @@ const content: ProjectDocument = {
             codeBlock: {
               request: "login",
               description: `The login section requires you to use the email address which was registered. Enter both the email and password below to log in. 
-              For this purpose, the response will not be the expected 200 response from the mutation itself. But from a query that retrieves the email of the user logged in. 
-              Null as the response if the login was unsuccessful and user data otherwise.`,
+               For this purpose, the response will not be the expected 200 response from the mutation itself. But from a query that retrieves the email of the user logged in. 
+               Null as the response if the login was unsuccessful and user data otherwise.`,
               operation: `mutation  LoginUser($email: String!, $password: String!) {\n    login(email: $email, password: $password)\n}`,
               fields: [
                 { fieldName: "email", type: "email" },
@@ -94,7 +94,7 @@ const content: ProjectDocument = {
             codeBlock: {
               request: "forgot_password",
               description: `Creates an email containing a link to reset/change your password. For this particular case, there is no client-side.
-              A way around this is to copy the link address in the email. Go ahead and add it to the field named "key" in the change password section below`,
+               A way around this is to copy the link address in the email. Go ahead and add it to the field named "key" in the change password section below`,
               operation: `mutation  SendForgotPwdEmail($email: String!) {\n    sendForgotPasswordEmail(email: $email)\n}`,
               fields: [{ fieldName: "email", type: "email" }],
               response: { data: { sendForgotPasswordEmail: true } },
@@ -105,7 +105,7 @@ const content: ProjectDocument = {
             codeBlock: {
               request: "change_password",
               description: `Here you will need to use the key taken from the pathname. If you need the key follow the steps above to get it from the email. 
-              Once completed, enter both the key and new password to the fields below.`,
+               Once completed, enter both the key and new password to the fields below.`,
               operation: `mutation  ChangePassword($newPassword: String!, $key: String!) {\n    changeForgottenPassword(newPassword: $newPassword, key: $key)\n}`,
               fields: [
                 { fieldName: "new_password", type: "password" },

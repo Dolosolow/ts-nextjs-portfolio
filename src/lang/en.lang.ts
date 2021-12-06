@@ -32,7 +32,7 @@ export default {
     header: {
       subText: "Hi, my name is",
       title_first: "Jose Munoz",
-      title_second: "I build things for the web",
+      title_second: "Build it and they will come",
       text: `I'm a web developer based in Jersey City, NJ specializing in building and designing
         high-quality websites and applications.`,
     },

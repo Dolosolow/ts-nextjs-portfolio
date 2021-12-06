@@ -1,80 +1,83 @@
-/**
-|--------------------------------------------------
-| GQL Operations for the client-side for the documentation section.
-|--------------------------------------------------
-*/
-const defaultGqlUri = "http://localhost:4000/graphql";
+import axios from "axios";
 
-export const fetchResponse = async (query: string, uri: string = defaultGqlUri) => {
-  const response = await (
-    await fetch(uri, {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
-    })
-  ).json();
+const defaultGqlUri = "https://api.jrmunz.com/graphql";
 
-  return response;
+export const fetchResponse = async (
+  query: string,
+  variables?: { [key: string]: any },
+  uri: string = defaultGqlUri
+) => {
+  const response = await await axios({
+    url: uri,
+    withCredentials: true,
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    data: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
+
+  return response.data;
 };
 
 export class GQLOperations {
   static UserQuery = () => {
     return `
-      query {
-        user {
-          email
-        }
-      }
-    `;
+       query {
+         user {
+           email
+         }
+       }
+     `;
   };
 
   static LogoutMutation = () => {
     return `
-      mutation {
-        logout
-      }
-    `;
+       mutation {
+         logout
+       }
+     `;
   };
 
-  static RegisterMutation = (email: string) => {
+  static RegisterMutation = () => {
     return `
-      mutation {
-        register(email: "${email}", password: "${email}") {
-          path
-          message
-        }
-      }
-    `;
+       mutation register($email: String!, $password: String!) {
+         register(email: $email, password: $password) {
+           path
+           message
+         }
+       }
+     `;
   };
 
-  static LoginMutation = (email: string, password: string) => {
+  static LoginMutation = () => {
     return `
-      mutation {
-        login(email: "${email}", password: "${password}") {
-          path
-          message
-        }
-      }
-    `;
+       mutation login($email: String!, $password: String!) {
+         login(email: $email, password: $password) {
+           path
+           message
+         }
+       }
+     `;
   };
 
-  static ForgotPasswordMutation = (email: string) => {
+  static ForgotPasswordMutation = () => {
     return `
-      mutation {
-        sendForgotPasswordEmail(email: "${email}")
-      }
-    `;
+       mutation sendForgotPasswordEmail($email: String!){
+         sendForgotPasswordEmail(email: $email)
+       }
+     `;
   };
 
-  static ChangePasswordMutation = (newPassword: string, key: string) => {
+  static ChangePasswordMutation = () => {
     return `
-      mutation {
-        changeForgottenPassword(newPassword: "${newPassword}", key: "${key}") {
-          path
-          message
-        }
-      }
-    `;
+       mutation changeForgottenPassword($newPassword: String!, $key: String!){
+         changeForgottenPassword(newPassword: $newPassword, key: $key) {
+           path
+           message
+         }
+       }
+     `;
   };
 }
