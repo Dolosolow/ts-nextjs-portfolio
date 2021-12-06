@@ -7,15 +7,23 @@ import { StyledButton } from "@/components/common/styled-button";
 
 export const ProjectBanner = ({ project }: { project: JRMProject }) => {
   return (
-    <BannerWrapper className="f-align">
+    <BannerWrapper className="f-col-center">
       <div>
         <p>
           {project.name} {project.subName}
         </p>
-        <p style={{ opacity: "0.5", fontSize: "1.4rem", marginTop: "5px" }}>Jose R Munoz</p>
       </div>
       <div className="banner-link__container f-center">
-        <a href="http://google.com" target="_blank">
+        <a href={project.github} target="_blank">
+          <StyledButton $background="#121212" $variant="outline" style={{ paddingRight: "2rem" }}>
+            <span>View Code</span>
+            <ExternalLinkIcon
+              fontSize={8}
+              style={{ position: "absolute", marginLeft: "8px", marginTop: "2px" }}
+            />
+          </StyledButton>
+        </a>
+        <a href={project.siteUrl} target="_blank">
           <StyledButton $background="#121212" style={{ paddingRight: "2rem" }}>
             <span>View live site</span>
             <ExternalLinkIcon

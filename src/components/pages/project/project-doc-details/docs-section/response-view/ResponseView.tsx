@@ -1,6 +1,6 @@
 import { CodeBlock, atomOneDark } from "react-code-blocks";
 
-import { StyledCodeView } from "./styled";
+import { ResponseViewWrapper } from "./styled";
 
 export interface RVProps {
   codeBlock?: { [key: string]: any } | string;
@@ -9,7 +9,7 @@ export interface RVProps {
 }
 
 export const ResponseView = ({ codeBlock, title, desc }: RVProps) => (
-  <StyledCodeView>
+  <ResponseViewWrapper>
     {title && <h2 className="responseview__title">{title}</h2>}
     {desc && (
       <div className="responseview__desc">
@@ -19,14 +19,14 @@ export const ResponseView = ({ codeBlock, title, desc }: RVProps) => (
     {codeBlock && (
       <div className="responseview__block">
         <CodeBlock
+          style
           text={typeof codeBlock === "string" ? codeBlock : JSON.stringify(codeBlock, null, 5)}
           language="graphql"
           showLineNumbers={false}
           startingLineNumber={0}
           theme={atomOneDark}
-          style
         />
       </div>
     )}
-  </StyledCodeView>
+  </ResponseViewWrapper>
 );

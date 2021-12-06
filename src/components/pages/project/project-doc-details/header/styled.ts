@@ -118,7 +118,7 @@ export const StyledHeader = styled.div<StyledProps>`
         .header-wrapper {
           &__context {
             h2 {
-              font-size: 4.8rem;
+              font-size: 4.5rem;
               width: 83%;
             }
 

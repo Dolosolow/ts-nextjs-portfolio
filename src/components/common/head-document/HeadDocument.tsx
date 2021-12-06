@@ -4,7 +4,7 @@ import { Head } from "next/document";
 
 import lang from "@/lang/en.lang";
 
-const { title, description, domain, keywords } = lang.meta;
+const { title, description, domain, keywords, url, cardImgUrl } = lang.meta;
 
 export const HeadDocument = () => (
   <Head>
@@ -18,7 +18,9 @@ export const HeadDocument = () => (
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title.content} />
     <meta property="og:description" content={description.content} />
+    <meta property="og:image" content={cardImgUrl} />
     <meta property="og:site_name" content={domain} />
+    <meta property="og:url" content={url} />
     <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
     <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
   </Head>

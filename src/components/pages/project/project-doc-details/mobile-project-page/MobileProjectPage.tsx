@@ -23,8 +23,8 @@ export const MobileProjectPage = ({ project }: { project: JRMProject }) => {
   const [projectContent] = useState(lang[project.name]);
 
   const renderBodyContent = () => {
-    return projectContent.sections.map((section: Document<DocumentMobileBody>) => (
-      <DocumentWrapper type="mobile" project={project} section={section} />
+    return projectContent.sections.map((section: Document<DocumentMobileBody>, idx) => (
+      <DocumentWrapper key={idx} type="mobile" project={project} section={section} />
     ));
   };
 

@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <DynamicNavbar isRootRoute={!query["doc"]} />
+      <DynamicNavbar isRootRoute={!query["doc"] && !query["web"]} />
       {children}
       <DynamicToTopButton isRootRoute={!query["doc"]} />
       <DynamicFooter isRootRoute={!query["doc"]} />

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { StyledProps } from "@/styles/styled";
 
 export const StyledBlock = styled.div<StyledProps>`
-  margin: 2.5rem 0;
+  margin: 1rem 0;
   width: 100%;
 
   .styledblock__resloader {

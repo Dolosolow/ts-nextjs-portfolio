@@ -23,15 +23,16 @@ export const StyledHeadline = styled.div<StyledProps>`
       }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
-        margin: 4rem 0;
+        margin: 3.5rem 0;
 
         .sectionheadline {
           &__text {
-            font-size: 4rem;
+            font-size: 3.6rem;
           }
 
           &__subtext {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+            margin-top: 1rem;
           }
         }
       }

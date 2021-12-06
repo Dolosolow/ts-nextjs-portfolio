@@ -7,6 +7,7 @@ const projects: JRMProject[] = [
     name: "Fascio",
     subName: "Product Bundler",
     type: "web",
+    siteUrl: "",
     github: "",
     caption:
       "Fascio, a BigCommerce app, can create product bundles which can be listed to sell at a storefront.",
@@ -40,23 +41,13 @@ const projects: JRMProject[] = [
     name: "Harbor",
     subName: "Home Services",
     type: "web",
+    siteUrl: "https://harborhomeser.com/",
     github: "https://github.com/Dolosolow/harbor-home-services",
     caption:
       "Handyman website, view services and previous work. Receive project inquiries via email.",
     description:
       "A movie theater ticket booking website. With real-time seat reservations, movie scheduling, account signup, reward system, email confirmation and qrcode e-ticket.",
-    stack: [
-      "Html5",
-      "Css3",
-      "Javascript",
-      "JQuery",
-      "NodeJS",
-      "Express",
-      "MongoDB",
-      "REST",
-      "Socketio",
-      "Webpack",
-    ],
+    stack: ["NextJS", "Chakra-ui", "Typescript", "NodeJS", "REST", "Figma"],
     images: {
       height: "14499",
       width: "1810",
@@ -70,10 +61,11 @@ const projects: JRMProject[] = [
   },
   {
     id: "2",
-    color: "#eee",
+    color: "#ad341c",
     name: "FLIX",
     subName: "Movie Theater Website",
     type: "web",
+    siteUrl: "https://flix-movie-ticket-booking-site.herokuapp.com/",
     github: "https://github.com/Dolosolow/mvb",
     caption:
       "Buy movie tickets in advance, find movie times, read movie reviews, and more with FLIX.",
@@ -108,25 +100,13 @@ const projects: JRMProject[] = [
     name: "Server",
     subName: "TS GraphQL Server",
     type: "api",
+    siteUrl: "",
     github: "https://github.com/Dolosolow/gql-typescript-server",
     caption:
       "Boilerplate server with user management system. Register, authenticate, and send emails.",
     description:
       "Full-stack Monorepo clone of Spotify. Mobile app, Web app, and desktop app all connected together. sign-in capabilities, using expo-av for audio, search for music and liked/add songs to your playlist.",
-    stack: [
-      "Typescript",
-      "ReactJS",
-      "React-Native",
-      "NodeJS",
-      "MongoDB",
-      "Socketio",
-      "Graphql",
-      "Postgres",
-      "Typeorm",
-      "Heroku",
-      "Docker",
-      "DigitalOcean",
-    ],
+    stack: ["Typescript", "Typeorm", "NodeJS", "Express", "Graphql", "Postgres"],
     images: {
       height: "",
       width: "",
@@ -140,15 +120,16 @@ const projects: JRMProject[] = [
   },
   {
     id: "4",
-    color: "#1db954",
+    color: "#168c40",
     name: "Spotify",
     subName: "Music Streaming",
     type: "mobile",
+    siteUrl: "",
     github: "https://github.com/Dolosolow/Spotify-Clone",
     caption: "Cloned Music streaming app from the popular Swedish audio service Spotify.",
     description:
       "Full-stack Monorepo clone of Spotify. Mobile app, Web app, and desktop app all connected together. sign-in capabilities, using expo-av for audio, search for music and liked/add songs to your playlist.",
-    stack: ["Typescript", "ReactJS", "React-Native", "Redux"],
+    stack: ["Typescript", "Expo", "React Native", "Redux"],
     images: {
       height: "",
       width: "",

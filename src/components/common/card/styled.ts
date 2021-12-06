@@ -123,10 +123,6 @@ export const StyledCard = styled(animated.div)<StyledProps>`
             font-size: 2.3rem !important;
           }
 
-          &__desc {
-            font-size: 1.4rem;
-          }
-
           &__img {
             height: 25rem;
           }

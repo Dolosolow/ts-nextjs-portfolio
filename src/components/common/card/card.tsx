@@ -24,7 +24,7 @@ const generateUrlQuery = (data: JRMProject, type: "api" | "mobile" | "web") => {
     case "mobile":
       return `${baseParams}/${data.id}?doc=true`;
     default:
-      return `${baseParams}/${data.id}`;
+      return `${baseParams}/${data.id}?web=true`;
   }
 };
 

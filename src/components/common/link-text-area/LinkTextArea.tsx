@@ -26,7 +26,7 @@ export const LinkTextArea = (props: LTAProps) => {
             .`,
         }}
       />
-      {description && <p className="linkarea____desc">{description}</p>}
+      {description && <p className="linkarea__desc">{description}</p>}
     </LinkTextWrapper>
   );
 };

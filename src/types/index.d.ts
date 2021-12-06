@@ -12,6 +12,7 @@ export type AppPropsWithLayout = AppProps & {
 
 export type Stack =
   | "Css3"
+  | "Expo"
   | "Cypress"
   | "DigitalOcean"
   | "Docker"
@@ -23,13 +24,14 @@ export type Stack =
   | "MongoDB"
   | "Heroku"
   | "Jest"
+  | "NextJS"
   | "JQuery"
   | "NodeJS"
   | "Postgres"
   | "Redis"
   | "Redux"
   | "ReactJS"
-  | "React-Native"
+  | "React Native"
   | "Sass"
   | "Styled-Components"
   | "Chakra-ui"
@@ -95,6 +97,7 @@ export interface JRMProject {
   subName: string;
   type: "api" | "web" | "mobile";
   github: string;
+  siteUrl: string;
   caption: string;
   description: string;
   stack: Stack[];

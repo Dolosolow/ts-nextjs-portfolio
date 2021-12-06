@@ -1,6 +1,9 @@
 export default {
   meta: {
-    domain: "JRM",
+    domain: "jrmunz",
+    url: "https://www.jrmunz.com/",
+    cardImgUrl:
+      "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647732631/images/jrm_card_wsupgu.png",
     signed: `Desgined & Built by Jose R. Munoz`,
     title: {
       key: "title",

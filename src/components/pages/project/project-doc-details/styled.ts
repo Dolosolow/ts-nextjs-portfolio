@@ -26,7 +26,7 @@ export const BodyWrapper = styled.div<StyledProps>`
 
       .full-description {
         width: 65%;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         line-height: 1.65;
         color: #7e7e7e;
       }
@@ -69,7 +69,7 @@ export const BodyWrapper = styled.div<StyledProps>`
         .full-description {
           width: 80%;
           font-size: 1.6rem;
-          line-height: 1.7;
+          line-height: 1.5;
         }
 
         .text-block {
@@ -83,6 +83,7 @@ export const BodyWrapper = styled.div<StyledProps>`
         }
 
         .text-block {
+          font-size: 1.4rem;
           width: 100%;
         }
       }

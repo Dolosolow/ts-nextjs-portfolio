@@ -18,7 +18,7 @@ export const MobilePreview = styled.div<StyledProps>`
         align-self: center;
         transform: scale(0.69);
         border: 1rem solid #121212;
-        border-radius: 4.8rem;
+        border-radius: 5.6rem;
         overflow: hidden;
         position: relative;
       }

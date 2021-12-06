@@ -91,6 +91,17 @@ export const MdFlipBottomIn = keyframes`
   100% { margin-top: -200px }
 `;
 
+export const SmFlipBottomIn = keyframes`
+  0% { margin-top: -250px }
+  5% { margin-top: -145px }
+  33% { margin-top: -145px }
+  38% { margin-top: -72px }
+  66% { margin-top: -72px }
+  71% { margin-top: 4px }
+  99.99% { margin-top: 4px }
+  100% { margin-top: -250px }
+`;
+
 // -------------------
 // spin-clockwise
 // -------------------

@@ -28,10 +28,12 @@ export const StackWrapper = styled.div<StyledProps>`
       }
 
       @media only screen and (max-width: ${mediaPx.tabPort / 16}em) {
+        font-size: 1.8rem;
         width: 33.3%;
       }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
+        font-size: 1.5rem;
         padding: 1rem 0;
         width: 50%;
       }

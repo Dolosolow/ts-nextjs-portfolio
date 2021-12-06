@@ -9,7 +9,7 @@ export const StyledFooter = styled.footer<StyledProps>`
       background-color: ${$isRootRoute ? colors.rasinBlack : "#fafafa"};
 
       p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 300;
         color: ${$isRootRoute ? colors.smokedWhite : "#121212"};
         padding: 2.5rem 0;
@@ -23,7 +23,9 @@ export const StyledFooter = styled.footer<StyledProps>`
       }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
-        height: 8rem;
+        p {
+          padding: 2rem 0;
+        }
       }
     `;
   }}
