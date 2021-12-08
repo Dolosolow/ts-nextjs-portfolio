@@ -4,6 +4,7 @@ import { StyledProps } from "@/styles/styled";
 
 export const StyledMarqueeContainer = styled.div<StyledProps>`
   min-height: 25rem;
+  max-width: 144rem;
   width: 100%;
   padding-top: 4rem;
   background-color: #393b3d56;

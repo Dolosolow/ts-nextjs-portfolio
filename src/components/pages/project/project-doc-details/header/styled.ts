@@ -4,14 +4,12 @@ import { StyledProps } from "@/styles/styled";
 export const StyledHeader = styled.div<StyledProps>`
   ${({ theme: { mediaPx } }) => {
     return css`
-      display: flex;
-      justify-content: space-between;
-      min-height: 60rem;
-      height: 40rem;
-      width: 100%;
       background-color: #181b25;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      height: 40rem;
+      min-height: 60rem;
+      width: 100%;
 
       &.mobile-pg {
         min-height: 65rem;
@@ -22,6 +20,12 @@ export const StyledHeader = styled.div<StyledProps>`
       }
 
       .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        max-width: 144rem;
+
         &__context {
           width: 56%;
           height: 100%;
@@ -57,7 +61,6 @@ export const StyledHeader = styled.div<StyledProps>`
       }
 
       @media only screen and (max-width: ${mediaPx.tabLand / 16}em) {
-        flex-direction: column;
         padding-bottom: 2rem;
         padding-top: 3rem;
 
@@ -70,6 +73,8 @@ export const StyledHeader = styled.div<StyledProps>`
         }
 
         .header-wrapper {
+          flex-direction: column;
+
           &__context {
             width: 100%;
 

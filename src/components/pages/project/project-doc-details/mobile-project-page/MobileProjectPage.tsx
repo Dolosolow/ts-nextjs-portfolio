@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 import { FlipBook } from "@/components/common/flip-book";
 import { MobileProjectPreview } from "./mobile-project-preview";
-import { DocumentWrapper } from "../../document-wrapper";
+import { DocumentWrapper } from "../document-wrapper";
 import type { SHProps } from "@/components/common/section-headline";
 import type { PHProps } from "@/components/pages/project/project-doc-details/header";
 import type { JRMProject, DocumentMobileBody, Document } from "@/types/index";
@@ -34,9 +34,10 @@ export const MobileProjectPage = ({ project }: { project: JRMProject }) => {
         pageType={project.type as "api" | "mobile"}
         desc={projectContent.caption}
         xlink={project.github}
+        liveLink={project.siteUrl}
         imgContainer={
           <MobileProjectPreview
-            videoSrc={project.images.videoSrc!}
+            video={{ src: project.images.videoSrc!.src, poster: project.images.videoSrc!.poster }}
             qrImgSrc={project.images.qrImgSrc!}
           />
         }

@@ -21,6 +21,8 @@ export const BodyWrapper = styled.div<StyledProps>`
     return css`
       width: 100%;
       height: 100%;
+      max-width: 144rem;
+      margin: auto;
       background-color: #fafafa;
       padding: 0 2rem 10rem 2rem;
 
@@ -64,11 +66,11 @@ export const BodyWrapper = styled.div<StyledProps>`
       }
 
       @media only screen and (max-width: ${mediaPx.tabLand / 16}em) {
-        padding: 0 2rem 6rem 2rem;
+        padding: 2rem 2rem 6rem 2rem;
 
         .full-description {
           width: 80%;
-          font-size: 1.6rem;
+          font-size: 1.5rem;
           line-height: 1.5;
         }
 
@@ -79,7 +81,7 @@ export const BodyWrapper = styled.div<StyledProps>`
 
       @media only screen and (max-width: ${mediaPx.tabPort / 16}em) {
         .full-description {
-          width: 100%;
+          width: 90%;
         }
 
         .text-block {

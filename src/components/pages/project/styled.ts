@@ -6,11 +6,14 @@ export const StyledProjectImg = styled.div<StyledProps>`
   ${({ theme: { mediaPx, colors } }) => {
     return css`
       background-color: ${colors.rasinBlack};
-      width: 100%;
       padding: 100px 0;
       height: 100%;
+      width: 100%;
 
       .projectlayout {
+        margin: auto;
+        max-width: 144rem;
+
         &__imgwrapper {
           width: 83%;
           position: "relative";

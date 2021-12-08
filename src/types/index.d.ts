@@ -11,6 +11,7 @@ export type AppPropsWithLayout = AppProps & {
 };
 
 export type Stack =
+  | "Babel"
   | "Css3"
   | "Expo"
   | "Cypress"
@@ -31,6 +32,7 @@ export type Stack =
   | "Redis"
   | "Redux"
   | "ReactJS"
+  | "SendGrid"
   | "React Native"
   | "Sass"
   | "Styled-Components"
@@ -107,7 +109,10 @@ export interface JRMProject {
     blur?: string;
     thumbnail: string;
     detailed: string;
-    videoSrc: string | null;
+    videoSrc: {
+      src: string;
+      poster: string;
+    } | null;
     qrImgSrc: string | null;
   };
 }

@@ -4,11 +4,11 @@ import NextImage from "next/image";
 import { MobilePreview } from "./styled";
 
 interface MPRProps {
-  videoSrc: string;
+  video: { src: string; poster: string };
   qrImgSrc: string;
 }
 
-export const MobileProjectPreview = ({ videoSrc, qrImgSrc }: MPRProps) => (
+export const MobileProjectPreview = ({ video, qrImgSrc }: MPRProps) => (
   <MobilePreview>
     <div className="device-img-wrapper">
       <video
@@ -16,13 +16,15 @@ export const MobileProjectPreview = ({ videoSrc, qrImgSrc }: MPRProps) => (
         height="100%"
         width="100%"
         style={{ objectFit: "fill" }}
-        poster="https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647734954/images/spotify-screen-poster_wdofto.png"
+        poster={video.poster}
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src={video.src} type="video/mp4" />
       </video>
     </div>
-    <div className="device-qr-wrapper">
-      <NextImage src={qrImgSrc} width="200px" height="200px" />
-    </div>
+    {qrImgSrc.length > 1 && (
+      <div className="device-qr-wrapper">
+        <NextImage src={qrImgSrc} width="200px" height="200px" />
+      </div>
+    )}
   </MobilePreview>
 );

@@ -7,12 +7,13 @@ import { StyledDocsSection } from "./styled";
 
 export const DocsSection = ({ apiDocs }: { apiDocs: DocumentApiBody[] }) => {
   const renderDocSections = () => {
-    return apiDocs.map((section) => {
+    return apiDocs.map((section, idx) => {
       if ("type" in section) {
         return section.type === "request" ? (
-          <RequestView requestData={section.codeBlock} />
+          <RequestView key={idx} requestData={section.codeBlock} />
         ) : (
           <ResponseView
+            key={idx}
             title={section.title}
             desc={section.description}
             codeBlock={section.codeBlock}
@@ -21,7 +22,13 @@ export const DocsSection = ({ apiDocs }: { apiDocs: DocumentApiBody[] }) => {
       } else {
         const { href, link_text, description, text } = section.link;
         return (
-          <LinkTextArea href={href} linkText={link_text} text={text} description={description} />
+          <LinkTextArea
+            key={idx}
+            href={href}
+            linkText={link_text}
+            text={text}
+            description={description}
+          />
         );
       }
     });

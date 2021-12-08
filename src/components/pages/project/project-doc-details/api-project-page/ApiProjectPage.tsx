@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import NextImage from "next/image";
 
 import { FlipBook } from "@/components/common/flip-book";
-import { DocumentWrapper } from "../../document-wrapper";
+import { DocumentWrapper } from "../document-wrapper";
 import type { PHProps } from "@/components/pages/project/project-doc-details/header";
 import type { JRMProject, DocumentApiBody, Document } from "@/types/index";
 
@@ -19,8 +19,8 @@ export const ApiProjectPage = ({ project }: { project: JRMProject }) => {
   const [projectContent] = useState(lang[project.name]);
 
   const renderBodyContent = () => {
-    return projectContent.sections.map((section: Document<DocumentApiBody>) => (
-      <DocumentWrapper type="api" project={project} section={section} />
+    return projectContent.sections.map((section: Document<DocumentApiBody>, idx) => (
+      <DocumentWrapper key={idx} type="api" project={project} section={section} />
     ));
   };
 
@@ -30,6 +30,7 @@ export const ApiProjectPage = ({ project }: { project: JRMProject }) => {
         pageType={project.type as "api" | "mobile"}
         desc={projectContent.caption}
         xlink={project.github}
+        liveLink={project.siteUrl}
         imgContainer={
           <NextImage
             priority

@@ -20,7 +20,6 @@ const generateUrlQuery = (data: JRMProject, type: "api" | "mobile" | "web") => {
 
   switch (type) {
     case "api":
-      return `${baseParams}/${data.id}?doc=true`;
     case "mobile":
       return `${baseParams}/${data.id}?doc=true`;
     default:
@@ -46,13 +45,21 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
         <Link href={generateUrlQuery(data, data.type)}>
           <StyledButton $background={data.color}>Details</StyledButton>
         </Link>
-        <StyledButton $background={data.color} $variant="outline" style={{ paddingRight: "2rem" }}>
-          <span>See live site</span>
-          <ExternalLinkIcon
-            fontSize={8}
-            style={{ position: "absolute", marginLeft: "8px", marginTop: "2px" }}
-          />
-        </StyledButton>
+        {data.siteUrl.length > 1 && (
+          <a target="_blank" rel="noopener noreferrer" href={data.siteUrl}>
+            <StyledButton
+              $background={data.color}
+              $variant="outline"
+              style={{ paddingRight: "2rem" }}
+            >
+              <span>See live site</span>
+              <ExternalLinkIcon
+                fontSize={8}
+                style={{ position: "absolute", marginLeft: "8px", marginTop: "2px" }}
+              />
+            </StyledButton>
+          </a>
+        )}
       </div>
     </div>
     <div className="card__img" style={{ backgroundColor: data.color }}>
