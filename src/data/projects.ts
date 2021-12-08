@@ -155,7 +155,7 @@ const projects: JRMProject[] = [
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1628018526/images/ex-img_uwifuw.png",
       videoSrc: {
-        src: "https://res.cloudinary.com/dnrj5jpxf/video/upload/v1647200112/images/spotify-screen_p1huqs.mp4",
+        src: "https://res.cloudinary.com/dnrj5jpxf/video/upload/v1650038687/images/spotify-screen_xuhmce.mov",
         poster:
           "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647734954/images/spotify-screen-poster_wdofto.png",
       },
