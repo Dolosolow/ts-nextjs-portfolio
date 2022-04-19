@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
 import { StyledProps } from "@/styles/styled";
 
-export const StyledButton = styled.button<StyledProps>`
+export const StyledToTopButton = styled.button<StyledProps>`
   ${({ theme: { colors }, $isRootRoute, $show }) => {
     return css`
       background-color: ${$isRootRoute ? colors.smokedWhite : "#ededed"};
       display: ${$show ? "block" : "none"};
+      visibility: ${$show ? "visible" : "hidden"};
       height: 5rem;
       position: fixed;
       bottom: 2rem;

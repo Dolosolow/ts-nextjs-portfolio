@@ -1,14 +1,14 @@
 import React from "react";
 
-import { Codepen, Figma, Github } from "@/components/common/icons";
+import { Github } from "@/components/common/icons";
 import { CopyButton } from "@/components/common/copy-button";
-import { StyledButton } from "@/components/common/styled-button";
+import { StyledLinkBtn } from "@/components/common/styled-link-btn";
 import { ExternalLinkIcon } from "@/components/common/icons/ExternalLink";
 import { LayoutAboutLimiter, SocialLinkWrapper } from "./styled";
 import { StyledText } from "@/styles/styled";
 
 export interface ASProps {
-  id: string;
+  id?: string;
   content: {
     text: string;
     email: string;
@@ -36,45 +36,41 @@ export const AboutSection = (props: ASProps) => {
   return (
     <LayoutAboutLimiter id={props.id} $flexDirection="column" $width="70%">
       <div className="section-content f-align">
-        <h2 className="section-content__title">About me</h2>
-        <StyledText className="section-content__aboutme-text">{renderSectionText()}</StyledText>
+        <h2 role="heading" className="section-content__title">
+          About me
+        </h2>
+        <StyledText role="article" className="section-content__aboutme-text">
+          {renderSectionText()}
+        </StyledText>
       </div>
       <div className="section-content">
-        <h2 className="section-content__title">Contact me</h2>
+        <h2 role="heading" className="section-content__title">
+          Contact me
+        </h2>
         <SocialLinkWrapper className="f-column">
-          <div className="social-links">
-            <a href="https://github.com/Dolosolow" aria-label="visit github page" target="_blank">
+          <div aria-label="social links" className="social-links">
+            <a
+              href="https://github.com/Dolosolow"
+              role="link"
+              aria-label="visit github page"
+              target="_blank"
+            >
               <Github />
             </a>
-            <a href="/" aria-label="visit codepen page" target="_blank">
-              <Codepen />
-            </a>
-            <a href="/" aria-label="visit figma page" target="_blank">
-              <Figma />
-            </a>
           </div>
-          <div id="resume" className="f-column" style={{ width: "max-content" }}>
-            <StyledButton
+          <div className="f-column" style={{ width: "max-content" }}>
+            <StyledLinkBtn
+              role="link"
+              aria-label="view resume"
               $variant="outline"
-              style={{
-                paddingRight: "2rem",
-                margin: "1.5rem 0 1.5rem 0",
-                width: "max-content",
-              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={props.content.resumeUrl}
+              style={{ width: "max-content", margin: "1.5rem 0 1.5rem 0" }}
             >
-              <a
-                href={props.content.resumeUrl}
-                target="_blank"
-                aria-label="view resume"
-                style={{ color: "inherit" }}
-              >
-                View Resume
-              </a>
-              <ExternalLinkIcon
-                fontSize={8}
-                style={{ position: "absolute", marginLeft: "8px", marginTop: "2px" }}
-              />
-            </StyledButton>
+              <span style={{ marginRight: "1rem", color: "inherit" }}>View Resume</span>
+              <ExternalLinkIcon fontSize={8} />
+            </StyledLinkBtn>
             <CopyButton text={props.content.email} />
           </div>
         </SocialLinkWrapper>

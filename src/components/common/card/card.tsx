@@ -2,7 +2,7 @@ import NextImage from "next/image";
 import Link from "next/link";
 import type { SpringValue } from "react-spring";
 
-import { StyledButton } from "@/components/common/styled-button";
+import { StyledLinkBtn } from "@/components/common/styled-link-btn";
 import { ExternalLinkIcon } from "@/components/common/icons";
 import { StyledCard } from "./styled";
 import type { JRMProject } from "@/types/index";
@@ -30,6 +30,7 @@ const generateUrlQuery = (data: JRMProject, type: "api" | "mobile" | "web") => {
 export const Card = ({ data, style: { opacity, y } }: CProps) => (
   <StyledCard
     className="f"
+    aria-label={`${data.name} detail card`}
     $background={data.color}
     style={{
       opacity,
@@ -37,34 +38,48 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
     }}
   >
     <div className="card__content f-column">
-      <h2 className="card__title">
+      <h3 role="heading" className="card__title">
         <span>{data.name}</span>&nbsp;{data.subName}
-      </h2>
-      <p className="card__desc">{data.caption}</p>
+      </h3>
+      <p role="note" className="card__desc" style={{ padding: "2.5rem 0 0 0" }}>
+        {data.caption}
+      </p>
       <div className="card__btns f">
-        <Link href={generateUrlQuery(data, data.type)}>
-          <StyledButton $background={data.color}>Details</StyledButton>
+        <Link passHref href={generateUrlQuery(data, data.type)}>
+          <StyledLinkBtn
+            role="link"
+            aria-label={`view ${data.name} ${data.subName} details`}
+            tabIndex={0}
+            $background={data.color}
+          >
+            Details
+          </StyledLinkBtn>
         </Link>
         {data.siteUrl.length > 1 && (
-          <a target="_blank" rel="noopener noreferrer" href={data.siteUrl}>
-            <StyledButton
-              $background={data.color}
-              $variant="outline"
-              style={{ paddingRight: "2rem" }}
-            >
-              <span>See live site</span>
-              <ExternalLinkIcon
-                fontSize={8}
-                style={{ position: "absolute", marginLeft: "8px", marginTop: "2px" }}
-              />
-            </StyledButton>
-          </a>
+          <StyledLinkBtn
+            role="link"
+            aria-label={`View ${data.name} ${data.subName} site`}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={data.siteUrl}
+            $background={data.color}
+            $variant="outline"
+          >
+            <span style={{ marginRight: "1rem" }}>See live site</span>
+            <ExternalLinkIcon fontSize={8} />
+          </StyledLinkBtn>
         )}
       </div>
     </div>
     <div className="card__img" style={{ backgroundColor: data.color }}>
       <div style={{ position: "relative" }}>
-        <NextImage layout="fill" src={data.images.thumbnail} alt={data.name} objectFit="cover" />
+        <NextImage
+          role="img"
+          layout="fill"
+          src={data.images.thumbnail}
+          alt={data.name}
+          objectFit="cover"
+        />
       </div>
     </div>
   </StyledCard>

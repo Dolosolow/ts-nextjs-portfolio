@@ -53,7 +53,7 @@ const Home = ({ projects }: Props) => {
     <MainWrapper $enableFocus={enableFocus}>
       <Header content={{ ...lang.homepage.header }} />
       <DynamicCards id="projects" projects={projects} />
-      <DynamicMarquee id="stacks" />
+      <DynamicMarquee id="about" />
       <DynamicAboutSection id="about" content={{ ...lang.homepage.aboutSection }} />
     </MainWrapper>
   );

@@ -7,7 +7,7 @@ import { StyledMarqueeContainer } from "./styled";
 import techImgs from "@/utils/tech-stack-imgs";
 
 export interface MGProps {
-  id: string;
+  id?: string;
   secondRow?: boolean;
 }
 
@@ -30,7 +30,13 @@ export const MarqueeGallery = ({ id, secondRow = true }: MGProps) => {
         {images.map((img, idx) => {
           return (
             <div key={idx} className="marquee__img">
-              <NextImage src={img} alt="stack" width="100%" height="100%" />
+              <NextImage
+                role="img"
+                src={img}
+                alt={`${img.split("/")[4].split(".")[0]}`}
+                width="100%"
+                height="100%"
+              />
             </div>
           );
         })}
@@ -47,7 +53,7 @@ export const MarqueeGallery = ({ id, secondRow = true }: MGProps) => {
   };
 
   return (
-    <StyledMarqueeContainer id={id} ref={nodeRef}>
+    <StyledMarqueeContainer id={id} ref={nodeRef} role="marquee" aria-label="tech stack icon list">
       {renderContent()}
     </StyledMarqueeContainer>
   );

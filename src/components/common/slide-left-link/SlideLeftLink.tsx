@@ -16,6 +16,8 @@ export const SlideLeftLink = ({ href, icon, linkText }: SLLProps) => {
 
   return (
     <SlideLink
+      role="link"
+      aria-label="go back"
       className="f-align"
       onMouseEnter={() => {
         setisHovered(true);

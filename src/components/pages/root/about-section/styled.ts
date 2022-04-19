@@ -54,10 +54,10 @@ export const SocialLinkWrapper = styled.div`
   width: 70%;
 
   .social-links {
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 0 0;
 
     a {
-      color: currentColor !important;
+      color: #fafafa;
       display: inline-block;
       font-size: 2.5rem;
       transition: all 0.3s ease-in-out;
@@ -67,7 +67,7 @@ export const SocialLinkWrapper = styled.div`
       }
 
       :hover {
-        color: ${({ theme: { colors } }) => colors.primary} !important;
+        color: ${({ theme: { colors } }) => colors.primary};
         transform: translateY(-0.5rem);
       }
     }
@@ -75,9 +75,5 @@ export const SocialLinkWrapper = styled.div`
 
   @media only screen and (max-width: ${750 / 16}em) {
     align-self: flex-start;
-
-    .social-links {
-      margin: 0 0 1.5rem 0;
-    }
   }
 `;

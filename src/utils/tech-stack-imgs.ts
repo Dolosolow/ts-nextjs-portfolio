@@ -1,6 +1,5 @@
 const techStacks: { [key: string]: string } = {
   babel: "/images/svg/techstacks/babel.svg",
-  circleci: "/images/svg/techstacks/circleci.svg",
   ccs: "/images/svg/techstacks/css-3.svg",
   cypress: "/images/svg/techstacks/cypress.svg",
   do: "/images/svg/techstacks/digital-ocean.svg",

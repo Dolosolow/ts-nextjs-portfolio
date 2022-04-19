@@ -9,13 +9,25 @@ import { capitalize } from "@/utils/capitalize";
 
 export const Navbar = ({ isRootRoute }: { isRootRoute: boolean }) => {
   const [expanded, setExpanded] = useState(false);
+  const [currentSection, setCurrentSection] = useState("header");
 
   const renderNavLinks = () => {
     return isRootRoute ? (
-      <ul>
-        {["projects", "stacks", "about", "resume"].map((section) => (
+      <ul role="list">
+        <span className="aria-invisible">current section: {currentSection}</span>
+        {["projects", "about"].map((section) => (
           <li key={section}>
-            <Link spy smooth aria-label={`${section} section`} to={section} offset={-55}>
+            <Link
+              spy
+              smooth
+              tabIndex={0}
+              role="link"
+              activeClass="active-section"
+              aria-label={`scroll to ${section} section`}
+              to={section}
+              offset={-55}
+              onSetActive={(section) => setCurrentSection(section)}
+            >
               {capitalize(section)}
             </Link>
           </li>

@@ -1,0 +1,1 @@
+export { StyledLinkBtn } from "./StyledLinkBtn";

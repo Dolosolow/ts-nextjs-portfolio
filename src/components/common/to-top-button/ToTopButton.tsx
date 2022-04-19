@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { animateScroll } from "react-scroll";
 
 import { ChevronUpIcon } from "@/components/common/icons";
-import { StyledButton } from "./styled";
+import { StyledToTopButton } from "./styled";
 
 export const ToTopButton = ({ isRootRoute }: { isRootRoute: boolean }) => {
   const [show, setShow] = useState(false);
@@ -26,12 +26,16 @@ export const ToTopButton = ({ isRootRoute }: { isRootRoute: boolean }) => {
   }, [show]);
 
   return (
-    <StyledButton
+    <StyledToTopButton
       $show={show}
       $isRootRoute={isRootRoute}
+      name="goToTop"
+      role="button"
+      aria-label="go to top of the page"
       onClick={() => animateScroll.scrollToTop()}
     >
-      <ChevronUpIcon color="#181b25" fontSize={22} />
-    </StyledButton>
+      <span className="aria-invisible">click to scroll to top of the page</span>
+      <ChevronUpIcon style={{ userSelect: "none" }} color="#181b25" fontSize={22} />
+    </StyledToTopButton>
   );
 };

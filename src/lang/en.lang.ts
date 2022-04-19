@@ -4,7 +4,7 @@ export default {
     url: "https://www.jrmunz.com/",
     cardImgUrl:
       "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647732631/images/jrm_card_wsupgu.png",
-    signed: `Desgined & Built by Jose R. Munoz`,
+    signed: `Designed & Built by Jose R. Munoz`,
     title: {
       key: "title",
       content: "JR | Full Stack Developer - Freelancer",
@@ -19,6 +19,13 @@ export default {
       content: `Hire Freelancer and Full Stack developer. Hire Professional Freelancer & WordPress Developer. Building hi-end solutions, cloud solutions, website maintenance & security`,
     },
   },
+  pageNotFound: {
+    images: {
+      reg: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650291573/images/404page_cqdelt.png",
+      mobile:
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650305397/images/404page_sm_trfjsd.png",
+    },
+  },
   homepage: {
     aboutSection: {
       text: `
@@ -27,7 +34,7 @@ export default {
             `,
       email: "Jose.Munoz07c@gmail.com",
       resumeUrl:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642913757/images/jrm-resume_gn8zxo.pdf",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650112175/images/jrm-resume_oz3ptf.pdf",
     },
     header: {
       subText: "Hi, my name is",
@@ -35,6 +42,11 @@ export default {
       title_second: "Build it and they will come",
       text: `I'm a web developer based in Jersey City, NJ specializing in building and designing
         high-quality websites and applications.`,
+      images: {
+        reg: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650291347/images/bg_img_wtjqpt.png",
+        mobile:
+          "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650305398/images/bg_img_sm_cjmzx7.png",
+      },
     },
   },
 };

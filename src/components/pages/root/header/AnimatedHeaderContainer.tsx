@@ -17,7 +17,7 @@ export const AnimatedHeaderContainer = ({ children }: HCProps) => {
   const animatedTrails = useToggledTrails(React.Children.count(children), {
     from: { opacity: 0, y: 30 },
     to: { opacity: 1, y: 0 },
-    delay: 2300,
+    delay: 1200,
   });
 
   const animatedText = animatedTrails.map(({ opacity, y }: TrailsProps, idx: number) => {

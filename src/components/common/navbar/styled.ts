@@ -4,7 +4,7 @@ import { StyledContainer, StyledProps } from "@/styles/styled";
 import { slideInRight } from "@/styles/key-frames";
 
 export const StyledNavContainer = styled(StyledContainer)`
-  ${({ $expanded, $isRootRoute, theme: { mediaPx } }) => {
+  ${({ $expanded, $isRootRoute, theme: { mediaPx, colors } }) => {
     return css`
       ::before {
         content: url("/images/svg/logo.svg");
@@ -14,6 +14,11 @@ export const StyledNavContainer = styled(StyledContainer)`
         left: 0;
         transition: all 0.3s ease-in-out;
         display: ${$isRootRoute ? "block" : "none"};
+      }
+
+      .active-section {
+        color: ${colors.primary};
+        border-bottom: 2px solid ${colors.primary};
       }
 
       @media only screen and (max-width: ${mediaPx.phone / 16}em) {
@@ -44,14 +49,21 @@ export const StyledNavbar = styled.nav<StyledProps>`
         padding: 1.8rem;
         height: 100%;
         width: max-content;
+        margin-left: auto;
 
         li {
           display: inline-block;
-          margin: 0 4rem;
+          margin: 0 2rem;
+
+          :last-of-type {
+            margin: 0;
+          }
 
           a {
             color: currentColor;
             font-size: 1.4rem;
+            height: 100%;
+            padding: 5px 1rem;
 
             &:hover {
               color: white;

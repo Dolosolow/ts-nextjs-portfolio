@@ -6,15 +6,15 @@ export const Theme: DefaultTheme = {
     coolBlue: "#2e364a",
     primary: "#dd457c",
     rasinBlack: "#181b25",
-    smokedWhite: "rgba(255, 255, 255, 0.4)",
-    white: "rgba(255, 255, 255, 0.9)",
+    smokedWhite: "rgba(255, 255, 255, 0.65)",
+    white: "rgba(255, 255, 255, 1)",
   },
   fonts: {
     primaryFont: "source-han-sans-simplified-c, sans-serif",
   },
   mediaPx: {
     tabLand: 1200,
-    tabPort: 950,
+    tabPort: 1050,
     phone: 600,
   },
 };
@@ -55,7 +55,7 @@ a:focus,
 a:hover,
 a:active {
   cursor: pointer;
-  color: ${({ theme: { colors } }) => colors.rasinBlack};
+  color: inherit;
   text-decoration: none;
 }
 
@@ -73,6 +73,17 @@ button {
 ul {
   list-style: none;
   margin-bottom: 0;
+}
+
+.aria-invisible {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px;  
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .f {

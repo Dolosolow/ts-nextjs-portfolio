@@ -5,33 +5,29 @@ import { StyledProps } from "@/styles/styled";
 export const StyledCopyButton = styled.div<StyledProps>`
   justify-content: space-between;
   width: max-content;
+  background-color: #42485c;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  width: max-content;
+  z-index: 10;
 
-  .copy-button__msg {
-    font-size: 2rem;
-    margin-left: 1.5rem;
-    white-space: nowrap;
-    transition: all 0.3s ease-in-out;
-    color: ${({ theme: { colors } }) => `${colors.primary}`};
-
-    svg {
-      font-size: 2rem;
-      margin: 0 1rem;
-      margin-bottom: -2px;
-    }
+  :hover {
+    border: 2px solid ${({ theme: { colors } }) => `${colors.primary}`};
   }
 
-  .copy-button__text {
-    background-color: #42485c;
-    border: 2px solid transparent;
-    cursor: pointer;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    transition: all 0.25s ease-in-out;
-    width: max-content;
-    z-index: 10;
+  .copy-button__msg {
+    font-size: 1.6rem;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    right: -90px;
+    color: ${({ theme: { colors } }) => `${colors.primary}`};
+  }
 
-    :hover {
-      border: 2px solid #dd457c;
-    }
+  span {
+    margin-right: 1rem;
   }
 `;

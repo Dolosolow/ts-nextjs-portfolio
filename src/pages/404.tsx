@@ -4,6 +4,8 @@ import Link from "next/link";
 import { StyledButton } from "@/components/common/styled-button";
 import { PageNotFoundWrapper } from "@/styles/pages/styled-404";
 
+import lang from "@/lang/en.lang";
+
 const Page404 = () => (
   <PageNotFoundWrapper>
     <div className="pnf__bgtext">
@@ -18,7 +20,7 @@ const Page404 = () => (
     <div className="pnf__imgwrapper">
       <NextImage
         priority
-        src="/images/png/404page.png"
+        src={lang.pageNotFound.images.reg}
         alt="page not found"
         objectFit="cover"
         layout="fill"

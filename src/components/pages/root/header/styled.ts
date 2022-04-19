@@ -103,8 +103,8 @@ export const StyledHeader = styled.header<StyledProps>`
       }
 
       @media only screen and (max-width: ${350 / 16}em) {
-        min-height: 60rem;
-        height: 40vh;
+        min-height: 70rem;
+        height: 50vh;
 
         .path-shifter {
           margin-right: -5rem;
