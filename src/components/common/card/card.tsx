@@ -4,6 +4,7 @@ import type { SpringValue } from "react-spring";
 
 import { StyledLinkBtn } from "@/components/common/styled-link-btn";
 import { ExternalLinkIcon } from "@/components/common/icons";
+import { TagsList } from "@/components/common/tags-list";
 import { StyledCard } from "./styled";
 import type { JRMProject } from "@/types/index";
 
@@ -44,6 +45,7 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
       <p role="note" className="card__desc" style={{ padding: "2.5rem 0 0 0" }}>
         {data.caption}
       </p>
+      <TagsList items={data.stack} />
       <div className="card__btns f">
         <Link passHref href={generateUrlQuery(data, data.type)}>
           <StyledLinkBtn

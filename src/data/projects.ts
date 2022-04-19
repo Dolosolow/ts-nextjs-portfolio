@@ -51,7 +51,7 @@ const projects: JRMProject[] = [
       "Handyman website, view services and previous work. Receive project inquiries via email.",
     description:
       "A movie theater ticket booking website. With real-time seat reservations, movie scheduling, account signup, reward system, email confirmation and qrcode e-ticket.",
-    stack: ["NextJS", "Chakra-ui", "Typescript", "NodeJS", "SendGrid", "REST", "Figma"],
+    stack: ["NextJS", "Chakra-ui", "Typescript", "NodeJS", "SendGrid", "REST"],
     images: {
       height: "14499",
       width: "1810",
@@ -119,7 +119,6 @@ const projects: JRMProject[] = [
       "Express",
       "Postgres",
       "Graphql",
-      "Figma",
       "Chakra-ui",
       "Heroku",
     ],

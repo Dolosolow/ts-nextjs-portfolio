@@ -25,7 +25,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
           background: ${`-webkit-linear-gradient(90deg, ${$background} 0%, ${$background} 56%, rgba(40, 40, 40, 0) 95%)`};
           background: ${`linear-gradient(90deg, ${$background} 0%, ${$background} 56%, rgba(40, 40, 40, 0) 95%)`};
           height: 100%;
-          padding: 10rem;
+          padding: 8rem 10rem 10rem 10rem;
           width: 100%;
           z-index: 10;
         }
