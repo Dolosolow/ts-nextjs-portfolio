@@ -52,6 +52,7 @@ export const StyledText = styled.p<StyledProps>`
       color: ${$colored ? colors.primary : colors.smokedWhite};
       margin: ${$margin ? $margin : "0"};
       max-width: ${$maxWidth ? `${$maxWidth}px` : "none"};
+      font-weight: 300;
 
       @media only screen and (max-width: ${350 / 16}em) {
         font-size: 1.3rem;

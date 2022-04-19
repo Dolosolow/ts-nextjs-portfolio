@@ -1,19 +1,14 @@
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import NextImage from "next/image";
 
 import { FlipBook } from "@/components/common/flip-book";
+import { Header } from "@/components/pages/project/project-doc-details/header";
 import { DocumentWrapper } from "../document-wrapper";
-import type { PHProps } from "@/components/pages/project/project-doc-details/header";
 import type { JRMProject, DocumentApiBody, Document } from "@/types/index";
 
 import { MainApiWrapper, BodyWrapper } from "../styled";
 
 import lang from "src/lang/en-documented-projects";
-
-const DynamicHeader = dynamic<PHProps>(() =>
-  import("@/components/pages/project/project-doc-details/header").then((mod) => mod.Header)
-);
 
 export const ApiProjectPage = ({ project }: { project: JRMProject }) => {
   const [projectContent] = useState(lang[project.name]);
@@ -26,7 +21,7 @@ export const ApiProjectPage = ({ project }: { project: JRMProject }) => {
 
   return (
     <MainApiWrapper>
-      <DynamicHeader
+      <Header
         pageType={project.type as "api" | "mobile"}
         desc={projectContent.caption}
         xlink={project.github}

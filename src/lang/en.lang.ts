@@ -34,7 +34,7 @@ export default {
             `,
       email: "Jose.Munoz07c@gmail.com",
       resumeUrl:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650112175/images/jrm-resume_oz3ptf.pdf",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650372241/images/Jose_MunozResume_drehuy.pdf",
     },
     header: {
       subText: "Hi, my name is",

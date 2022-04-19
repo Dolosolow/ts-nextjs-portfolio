@@ -7,9 +7,9 @@ export const StyledHeader = styled.div<StyledProps>`
       background-color: #181b25;
       display: flex;
       justify-content: center;
-      height: 40rem;
+      height: 60rem;
       min-height: 60rem;
-      width: 100%;
+      width: 100vw;
 
       &.mobile-pg {
         min-height: 65rem;

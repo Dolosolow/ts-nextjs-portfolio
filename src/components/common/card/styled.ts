@@ -42,7 +42,7 @@ export const StyledCard = styled(animated.div)<StyledProps>`
 
         &__desc {
           font-size: 1.4rem;
-          font-weight: 200;
+          font-weight: 300;
           padding: 2.5rem 0 3.5rem 0;
           max-width: 45rem;
         }

@@ -21,6 +21,7 @@ export const LayoutAboutLimiter = styled(LayoutLimiter)`
         }
 
         &__aboutme-text {
+          font-weight: 300;
           line-height: 1.65;
           width: 70%;
         }

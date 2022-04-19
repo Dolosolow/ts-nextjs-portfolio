@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 
+import { Header } from "@/components/pages/project/project-doc-details/header";
 import { FlipBook } from "@/components/common/flip-book";
 import { MobileProjectPreview } from "./mobile-project-preview";
 import { DocumentWrapper } from "../document-wrapper";
 import type { SHProps } from "@/components/common/section-headline";
-import type { PHProps } from "@/components/pages/project/project-doc-details/header";
 import type { JRMProject, DocumentMobileBody, Document } from "@/types/index";
 
 import { MainMobileWrapper, BodyWrapper } from "../styled";
@@ -14,9 +14,6 @@ import lang from "src/lang/en-documented-projects";
 
 const DynamicSectionHeadline = dynamic<SHProps>(() =>
   import("src/components/common/section-headline").then((mod) => mod.SectionHeadline)
-);
-const DynamicHeader = dynamic<PHProps>(() =>
-  import("@/components/pages/project/project-doc-details/header").then((mod) => mod.Header)
 );
 
 export const MobileProjectPage = ({ project }: { project: JRMProject }) => {
@@ -30,7 +27,7 @@ export const MobileProjectPage = ({ project }: { project: JRMProject }) => {
 
   return (
     <MainMobileWrapper>
-      <DynamicHeader
+      <Header
         pageType={project.type as "api" | "mobile"}
         desc={projectContent.caption}
         xlink={project.github}
