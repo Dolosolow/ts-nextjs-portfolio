@@ -16,7 +16,7 @@ export default {
     },
     description: {
       key: "description",
-      content: `Hire Freelancer and Full Stack developer. Hire Professional Freelancer & WordPress Developer. Building hi-end solutions, cloud solutions, website maintenance & security`,
+      content: `Hire Freelancer and Full Stack developer. Hire Professional Freelancer, Web, and mobile Developer. Building hi-end solutions, cloud solutions, website maintenance & security`,
     },
   },
   pageNotFound: {
@@ -29,8 +29,8 @@ export default {
   homepage: {
     aboutSection: {
       text: `
-        Hello! I'm Jose, a software engineer based in Jersey City, NJ. Well-organized person, problem solver, with strong attention to detail.<br>
-        I enjoy building things that live on the internet, from websites and applications to anything in between. My goal is to keep learning and become better than I was yesterday. So the products I build are well designed for a better experience for the end-user.
+        Hello! I'm Jose, a self-taught web developer based in Jersey City, NJ. Passionate, well-organized person, problem solver, with strong attention to detail.<br>
+        I enjoy building things that help people connect and make their life simpler. From websites and applications to anything in between. My goal is to keep learning and become better than I was yesterday. So the products I build are well designed for a better experience for the end-user.
             `,
       email: "Jose.Munoz07c@gmail.com",
       resumeUrl:
