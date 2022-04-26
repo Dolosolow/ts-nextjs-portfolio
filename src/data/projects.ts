@@ -32,7 +32,7 @@ const projects: JRMProject[] = [
       width: "1810",
       blur: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1648705383/images/flix-layout-blur_yxduaj.png",
       thumbnail:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715624/images/FLIX_zabc63.png",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650936764/images/flix_thumb_moejzg.webp",
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1648705369/images/flix-layout_mpfsod.png",
       videoSrc: null,
@@ -57,7 +57,7 @@ const projects: JRMProject[] = [
       width: "1810",
       blur: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1648705383/images/hhs-layout-blur_wxzmss.png",
       thumbnail:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715624/images/Harbor_Home_qnz7ju.png",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650936866/images/harborhome_thumb_fszq0f.webp",
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1648705367/images/hhs-layout_yqzkxi.png",
       videoSrc: null,
@@ -91,7 +91,7 @@ const projects: JRMProject[] = [
       height: "",
       width: "",
       thumbnail:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1640321626/images/api_illu_md_n5q35r.png",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650936764/images/api_illu_thumb_ag798b.webp",
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1640321626/images/api_illu_md_n5q35r.png",
       videoSrc: null,
@@ -127,7 +127,7 @@ const projects: JRMProject[] = [
       width: "1810",
       blur: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1647742066/images/hhs-layout-blur_y1kau6.png",
       thumbnail:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715625/images/Fascio_hwzdcr.png",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650936764/images/Fascio_thumb_tpchyj.webp",
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642912451/images/fascio-layout_nukilh.png",
       videoSrc: null,
@@ -150,7 +150,7 @@ const projects: JRMProject[] = [
       height: "",
       width: "",
       thumbnail:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1642715624/images/spotify_2_ymjq0n.png",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650936764/images/spotify_thumb_znyfve.webp",
       detailed:
         "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1628018526/images/ex-img_uwifuw.png",
       videoSrc: {
