@@ -34,7 +34,7 @@ export default {
             `,
       email: "Jose.Munoz07c@gmail.com",
       resumeUrl:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650372241/images/Jose_MunozResume_drehuy.pdf",
+        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650919969/images/jose_munoz_resume_ujxomv.pdf",
     },
     header: {
       subText: "Hi, my name is",
@@ -43,9 +43,7 @@ export default {
       text: `I'm a web developer based in Jersey City, NJ specializing in building and designing
         high-quality websites and applications.`,
       images: {
-        reg: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650291347/images/bg_img_wtjqpt.png",
-        mobile:
-          "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650305398/images/bg_img_sm_cjmzx7.png",
+        reg: "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650935864/images/bg_img_b8cxx5.webp",
       },
     },
   },
