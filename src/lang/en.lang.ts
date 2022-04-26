@@ -33,8 +33,7 @@ export default {
         I enjoy building things that help people connect and make their life simpler. From websites and applications to anything in between. My goal is to keep learning and become better than I was yesterday. So the products I build are well designed for a better experience for the end-user.
             `,
       email: "Jose.Munoz07c@gmail.com",
-      resumeUrl:
-        "https://res.cloudinary.com/dnrj5jpxf/image/upload/v1650919969/images/jose_munoz_resume_ujxomv.pdf",
+      resumeUrl: process.env.NEXT_PUBLIC_RESUME_URL as string,
     },
     header: {
       subText: "Hi, my name is",

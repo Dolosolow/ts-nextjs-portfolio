@@ -32,6 +32,7 @@ export const HtmlHead = () => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{title.content}</title>
     </NextHead>
+    {/* adobe typekit fonts */}
     <Script
       dangerouslySetInnerHTML={{
         __html: `
@@ -46,5 +47,16 @@ export const HtmlHead = () => (
         `,
       }}
     />
+    {/* google analytics */}
+    <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-2704BN32BH" />
+    <Script strategy="lazyOnload">
+      {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', '${process.env.NEXT_PUBLIC_GLG_ANALYTICS as string}');
+      `}
+    </Script>
   </>
 );
