@@ -1,6 +1,5 @@
 'use client';
 
-import { useLayoutEffect } from "react";
 import { useTrail } from "@react-spring/web";
 
 interface ToggleTrailsProps {
@@ -11,20 +10,5 @@ interface ToggleTrailsProps {
 }
 
 export const useToggledTrails = (length: number, props: ToggleTrailsProps) => {
-  if (typeof window !== "undefined") {
-    const showAnimation = window.localStorage.getItem("ela");
-    const trailValues = showAnimation === null ? props : { ...props, from: props.to };
-
-    window.onbeforeunload = () => {
-      window.localStorage.removeItem("ela");
-    };
-
-    useLayoutEffect(() => {
-      if (!showAnimation) window.localStorage.setItem("ela", "true");
-    }, [showAnimation]);
-
-    return useTrail(length, trailValues);
-  }
-
   return useTrail(length, props);
 };

@@ -47,16 +47,16 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
       </p>
       <TagsList items={data.stack} />
       <div className="card__btns f">
-        <Link href={generateUrlQuery(data, data.type)}>
-          <StyledLinkBtn
-            role="link"
-            aria-label={`view ${data.name} ${data.subName} details`}
-            tabIndex={0}
-            $background={data.color}
-          >
-            Details
-          </StyledLinkBtn>
-        </Link>
+        <StyledLinkBtn
+          as={Link}
+          href={generateUrlQuery(data, data.type)}
+          role="link"
+          aria-label={`view ${data.name} ${data.subName} details`}
+          tabIndex={0}
+          $background={data.color}
+        >
+          Details
+        </StyledLinkBtn>
         {data.siteUrl.length > 1 && (
           <StyledLinkBtn
             role="link"
@@ -78,6 +78,7 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
         <NextImage
           role="img"
           fill
+          sizes="(max-width: 750px) 100vw, 60rem"
           src={data.images.thumbnail}
           alt={data.name}
           style={{ objectFit: "cover" }}

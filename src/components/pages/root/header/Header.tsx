@@ -24,6 +24,7 @@ export const Header = (props: HProps) => {
             src={lang.homepage.header.images.reg}
             alt="smoked backed image"
             fill
+            sizes="100vw"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
         </div>
