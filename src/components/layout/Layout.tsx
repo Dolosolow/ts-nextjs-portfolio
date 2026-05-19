@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
@@ -14,7 +14,7 @@ const DynamicToTopButton = dynamic<{ isRootRoute: boolean }>(() =>
   import('src/components/common/to-top-button').then((mod) => mod.ToTopButton)
 );
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const LayoutInner = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -29,6 +29,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <DynamicToTopButton isRootRoute={isRootRoute || !hasDoc} />
       <DynamicFooter isRootRoute={isRootRoute || !hasDoc} />
     </>
+  );
+};
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Suspense fallback={<>{children}</>}>
+      <LayoutInner>{children}</LayoutInner>
+    </Suspense>
   );
 };
 
