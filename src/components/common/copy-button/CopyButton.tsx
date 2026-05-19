@@ -1,3 +1,5 @@
+'use client';
+
 import { CopyIcon } from "@/components/common/icons";
 
 import { useClipboard } from "@/hooks/useClipboard";

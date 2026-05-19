@@ -1,3 +1,5 @@
+'use client';
+
 import { StyledFooter } from "./styled";
 
 import lang from "@/lang/en.lang";

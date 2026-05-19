@@ -1,3 +1,5 @@
+'use client';
+
 import { AnimatedList } from "./styled";
 
 interface FBProps {

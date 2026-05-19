@@ -1,3 +1,5 @@
+'use client';
+
 import { useLayoutEffect } from "react";
 import { useTrail } from "@react-spring/web";
 
