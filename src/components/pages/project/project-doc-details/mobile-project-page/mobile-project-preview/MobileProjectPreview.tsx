@@ -23,7 +23,7 @@ export const MobileProjectPreview = ({ video, qrImgSrc }: MPRProps) => (
     </div>
     {qrImgSrc.length > 1 && (
       <div className="device-qr-wrapper">
-        <NextImage src={qrImgSrc} width="200px" height="200px" />
+        <NextImage src={qrImgSrc} width={200} height={200} alt="QR code" />
       </div>
     )}
   </MobilePreview>

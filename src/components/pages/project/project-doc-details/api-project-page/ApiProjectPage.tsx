@@ -31,8 +31,8 @@ export const ApiProjectPage = ({ project }: { project: JRMProject }) => {
             priority
             src={project.images.detailed.toString()}
             alt="image"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: "contain" }}
           />
         }
         headline={

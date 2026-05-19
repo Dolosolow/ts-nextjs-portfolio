@@ -34,8 +34,8 @@ export const MarqueeGallery = ({ id, secondRow = true }: MGProps) => {
                 role="img"
                 src={img}
                 alt={`${img.split("/")[4].split(".")[0]}`}
-                width="100%"
-                height="100%"
+                width={100}
+                height={100}
               />
             </div>
           );

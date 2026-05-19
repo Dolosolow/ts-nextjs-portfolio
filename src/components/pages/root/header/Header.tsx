@@ -23,9 +23,8 @@ export const Header = (props: HProps) => {
             priority
             src={lang.homepage.header.images.reg}
             alt="smoked backed image"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
           />
         </div>
       </div>

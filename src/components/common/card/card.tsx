@@ -47,7 +47,7 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
       </p>
       <TagsList items={data.stack} />
       <div className="card__btns f">
-        <Link passHref href={generateUrlQuery(data, data.type)}>
+        <Link href={generateUrlQuery(data, data.type)}>
           <StyledLinkBtn
             role="link"
             aria-label={`view ${data.name} ${data.subName} details`}
@@ -77,10 +77,10 @@ export const Card = ({ data, style: { opacity, y } }: CProps) => (
       <div style={{ position: "relative" }}>
         <NextImage
           role="img"
-          layout="fill"
+          fill
           src={data.images.thumbnail}
           alt={data.name}
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
         />
       </div>
     </div>

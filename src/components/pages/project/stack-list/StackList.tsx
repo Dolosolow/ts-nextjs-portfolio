@@ -17,7 +17,7 @@ const StackItem = ({ item }: { item: string }) => (
   <StackWrapper className="f-align">
     <div className="stack__logo">
       {techImgs[item.toLowerCase()] ? (
-        <NextImage src={techImgs[item.toLowerCase()]} alt="tech" layout="fill" />
+        <NextImage src={techImgs[item.toLowerCase()]} alt="tech" fill />
       ) : (
         <PuzzleIcon fontSize={16} />
       )}

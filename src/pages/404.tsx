@@ -22,8 +22,8 @@ const Page404 = () => (
         priority
         src={lang.pageNotFound.images.reg}
         alt="page not found"
-        objectFit="cover"
-        layout="fill"
+        fill
+        style={{ objectFit: "cover" }}
       />
     </div>
   </PageNotFoundWrapper>
