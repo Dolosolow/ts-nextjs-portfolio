@@ -4,7 +4,7 @@ import Color from "color";
 
 import type { StyledProps } from "@/styles/styled";
 
-export const StyledCard = styled(animated.div)<StyledProps>`
+export const StyledCard = styled(animated.div as any)<StyledProps>`
   ${({ theme: { colors, mediaPx }, $background }) => {
     return css`
       height: 40rem;
