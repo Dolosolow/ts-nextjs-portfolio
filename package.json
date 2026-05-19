@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "start": "next start"
   },
   "devDependencies": {
