@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 import Link from "next/link";
-import type { SpringValue } from "react-spring";
+import type { SpringValue } from "@react-spring/web";
 
 import { StyledLinkBtn } from "@/components/common/styled-link-btn";
 import { ExternalLinkIcon } from "@/components/common/icons";

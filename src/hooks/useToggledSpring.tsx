@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react";
-import { useSpring } from "react-spring";
+import { useSpring } from "@react-spring/web";
 
 interface ToggleSpringProps {
   value: number;

@@ -1,5 +1,5 @@
 import React from "react";
-import type { SpringValue } from "react-spring";
+import type { SpringValue } from "@react-spring/web";
 
 import { useToggledTrails } from "@/hooks/useToggledTrail";
 

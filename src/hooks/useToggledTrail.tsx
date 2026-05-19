@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react";
-import { useTrail } from "react-spring";
+import { useTrail } from "@react-spring/web";
 
 interface ToggleTrailsProps {
   from: { opacity: number; y: number };

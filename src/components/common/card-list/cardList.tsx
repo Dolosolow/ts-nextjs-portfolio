@@ -1,4 +1,4 @@
-import type { SpringValue } from "react-spring";
+import type { SpringValue } from "@react-spring/web";
 
 import { Card } from "@/components/common/card";
 import { StyledCLContainer, StyledCardList } from "./styled";

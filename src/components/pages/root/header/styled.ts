@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { animated } from "react-spring";
+import { animated } from "@react-spring/web";
 
 import { StyledContainer, StyledText, StyledProps } from "@/styles/styled";
 import { animateSvgPath } from "@/styles/key-frames";

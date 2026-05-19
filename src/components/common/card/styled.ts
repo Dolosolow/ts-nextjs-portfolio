@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { animated } from "react-spring";
+import { animated } from "@react-spring/web";
 import Color from "color";
 
 import type { StyledProps } from "@/styles/styled";
