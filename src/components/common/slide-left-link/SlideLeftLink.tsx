@@ -29,7 +29,7 @@ export const SlideLeftLink = ({ href, icon, linkText }: SLLProps) => {
         router.push(href);
       }}
     >
-      {React.cloneElement(icon, {
+      {React.cloneElement(icon as React.ReactElement<{ style?: React.CSSProperties }>, {
         style: {
           transform: "translateX(-30px)",
         },

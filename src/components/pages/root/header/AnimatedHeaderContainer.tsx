@@ -29,7 +29,7 @@ export const AnimatedHeaderContainer = ({ children }: HCProps) => {
           opacity,
           transform: y.to((y) => `translate3d(0,${y}px,0)`),
         },
-      });
+      } as any);
     }
     return null;
   });

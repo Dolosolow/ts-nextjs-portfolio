@@ -19,12 +19,11 @@ export const ResponseView = ({ codeBlock, title, desc }: RVProps) => (
     {codeBlock && (
       <div className="responseview__block">
         <CodeBlock
-          style
           text={typeof codeBlock === "string" ? codeBlock : JSON.stringify(codeBlock, null, 5)}
           language="graphql"
           showLineNumbers={false}
           startingLineNumber={0}
-          theme={atomOneDark}
+          theme={atomOneDark as any}
         />
       </div>
     )}

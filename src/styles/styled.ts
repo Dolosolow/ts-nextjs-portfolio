@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export interface StyledProps {
   readonly $background?: string;
-  readonly $colored?: string;
+  readonly $colored?: boolean;
   readonly $enableFocus?: boolean;
   readonly $expanded?: boolean;
   readonly $isRootRoute?: boolean;
