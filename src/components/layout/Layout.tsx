@@ -1,26 +1,33 @@
-import React from "react";
-import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
+'use client';
+
+import React from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 const DynamicFooter = dynamic<{ isRootRoute: boolean }>(() =>
-  import("src/components/common/footer").then((mod) => mod.Footer)
+  import('src/components/common/footer').then((mod) => mod.Footer)
 );
 const DynamicNavbar = dynamic<{ isRootRoute: boolean }>(() =>
-  import("src/components/common/navbar").then((mod) => mod.Navbar)
+  import('src/components/common/navbar').then((mod) => mod.Navbar)
 );
 const DynamicToTopButton = dynamic<{ isRootRoute: boolean }>(() =>
-  import("src/components/common/to-top-button").then((mod) => mod.ToTopButton)
+  import('src/components/common/to-top-button').then((mod) => mod.ToTopButton)
 );
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { query } = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const hasDoc = searchParams.get('doc') !== null;
+  const hasWeb = searchParams.get('web') !== null;
+  const isRootRoute = pathname === '/';
 
   return (
     <>
-      <DynamicNavbar isRootRoute={!query["doc"] && !query["web"]} />
+      <DynamicNavbar isRootRoute={isRootRoute && !hasDoc && !hasWeb} />
       {children}
-      <DynamicToTopButton isRootRoute={!query["doc"]} />
-      <DynamicFooter isRootRoute={!query["doc"]} />
+      <DynamicToTopButton isRootRoute={isRootRoute || !hasDoc} />
+      <DynamicFooter isRootRoute={isRootRoute || !hasDoc} />
     </>
   );
 };
